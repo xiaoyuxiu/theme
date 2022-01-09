@@ -185,7 +185,7 @@
 <p><strong>复合键</strong>：复合键（组合键）将多个列作为一个索引键，一般用于复合索引。</p>
 <p><strong>索引：</strong>使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。</p>
 <p><strong>参照完整性:</strong> 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt="IMG_256"></p>
 <p><strong>表头</strong><strong>(header)</strong>: 每一列的名称;</p>
 <p><strong>列</strong><strong>(col):</strong> 具有相同数据类型的数据的集合;</p>
 <p><strong>行</strong><strong>(row)</strong>: 每一行用来描述某条记录的具体信息;</p>
@@ -198,29 +198,29 @@
 <p><img src="file:///C:/Users/admin/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="IMG_256"></p>
 <h3 id="4、如何选中一个数据库进行操作"><a href="#4、如何选中一个数据库进行操作" class="headerlink" title="4、如何选中一个数据库进行操作"></a>4、如何选中一个数据库进行操作</h3><p>  use 数据库</p>
 <p>  Show tables 从当前数据库查看信息</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%931.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%931.png" alt="IMG_256"></p>
 <p>show tables from 数据库名 可从别的数据库查看别的数据库信息</p>
 <p>select database(); 查看当前所在数据库</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%932.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%932.png" alt="IMG_256"></p>
 <h3 id="5、创建表和列"><a href="#5、创建表和列" class="headerlink" title="5、创建表和列"></a>5、创建表和列</h3><p>create table + 表名（</p>
 <p>再是列的种类</p>
 <p>若是结束了也用）；结尾</p>
 <h3 id="6、查看表的内容"><a href="#6、查看表的内容" class="headerlink" title="6、查看表的内容"></a>6、查看表的内容</h3><p>desc +表名</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%933.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%933.png" alt="IMG_256"></p>
 <h3 id="7、查看表的数据"><a href="#7、查看表的数据" class="headerlink" title="7、查看表的数据"></a>7、查看表的数据</h3><p>select * from +表名</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%934.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%934.png" alt="IMG_256"></p>
 <h3 id="8、表中插入数据"><a href="#8、表中插入数据" class="headerlink" title="8、表中插入数据"></a>8、表中插入数据</h3><p>Insert into +表名（数据类型）value+（内容）</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%935.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%935.png" alt="IMG_256"></p>
 <h3 id="9、修改数据"><a href="#9、修改数据" class="headerlink" title="9、修改数据"></a>9、修改数据</h3><p>update 表名 set 数据类型 = ’修改内容‘ where 数据类型 = 内容 </p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%936.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%936.png" alt="IMG_256"></p>
 <h3 id="10、删除数据"><a href="#10、删除数据" class="headerlink" title="10、删除数据"></a>10、删除数据</h3><p> delete from stuinfo where内容；</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%937.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%937.png" alt="IMG_256"></p>
 <h3 id="11、查看数据库版本"><a href="#11、查看数据库版本" class="headerlink" title="11、查看数据库版本"></a>11、查看数据库版本</h3><p>登录到mysql服务器：select version();</p>
 <p>没有登陆：mysql –version/mysql –V</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%938.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%938.png" alt="IMG_256"></p>
 <h3 id="12、mysql语法规范"><a href="#12、mysql语法规范" class="headerlink" title="12、mysql语法规范"></a>12、mysql语法规范</h3><p>不区分大小写，但建议关键字大小，表名列名小写</p>
 <p>每条命令分号结尾，根据需要可以进行缩进，换行</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%939.png" alt="IMG_256"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%939.png" alt="IMG_256"></p>
 <p>注释 —–单行：#注释文字     多行：/<em>注释文字</em>/</p>
 <h2 id="五、sql语言"><a href="#五、sql语言" class="headerlink" title="五、sql语言"></a>五、sql语言</h2><p>分为DQL语言、DML语言、   DDL语言、TCL语言</p>
 <h3 id="1、DQL语言"><a href="#1、DQL语言" class="headerlink" title="1、DQL语言"></a>1、DQL语言</h3><h4 id="1）基础查询"><a href="#1）基础查询" class="headerlink" title="1）基础查询"></a>1）基础查询</h4><p>select+查询列表 from+表名；显示什么</p>
@@ -619,8 +619,8 @@
 <h6 id="4、全外连接（交集-两个表）"><a href="#4、全外连接（交集-两个表）" class="headerlink" title="4、全外连接（交集+两个表）"></a>4、全外连接（交集+两个表）</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bo.<span class="operator">*</span>,b.<span class="operator">*</span> <span class="keyword">from</span> beauty b <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> boys.bo <span class="keyword">on</span> b.’boyfriend_id’<span class="operator">=</span>bo.id’ </span><br></pre></td></tr></table></figure>
 
 <h6 id="5、交叉连接-乘积连接）"><a href="#5、交叉连接-乘积连接）" class="headerlink" title="5、交叉连接(乘积连接）"></a>5、交叉连接(乘积连接）</h6><p>select bo.<em>,b.</em> from beauty b full cross join boys bo </p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%9310.png" alt="image-20220109204241236"></p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%9311.png" alt="image-20220109204250462"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9310.png" alt="image-20220109204241236"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9311.png" alt="image-20220109204250462"></p>
 <h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><p>含义：出现在其他语句中的select语句，称为子查询或内查询</p>
 <p>外部的查询称为主查询或外查询</p>
 <p>分类：按子查询出现的位置——select 后面：仅仅支持标量子查询</p>
@@ -631,7 +631,7 @@
 <p>​                                          列子查询（结果集只有一列多行）</p>
 <p>​                                          行子查询（结果集只有一行多列）</p>
 <p>​                                          表子查询（结果集一般为多行多列）</p>
-<p><img src="/.com//%E6%95%B0%E6%8D%AE%E5%BA%9312.png" alt="image-20220109204757647"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9312.png" alt="image-20220109204757647"></p>
 <h6 id="一、where或having后面"><a href="#一、where或having后面" class="headerlink" title="一、where或having后面"></a>一、where或having后面</h6><p>标量子查询（单行子查询）、列子查询（多行子查询）、行子查询（多列多行）</p>
 <p>特点：1、子查询放在小括号内</p>
 <p>​            2、子查询放在条件右侧</p>
@@ -714,7 +714,8 @@
       
         <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h1 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h1><h2 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h2><p>边吃饭边看手机，看起来是多个任务，但在同一时间里只做了一件事情</p>
 <h2 id="多线程-1"><a href="#多线程-1" class="headerlink" title="多线程"></a>多线程</h2><p>原来只有一条车道，慢慢因为车多了，道路堵塞，效率降低，因此开辟了一条道路</p>
-<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg"></p>
+<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg" class>
+
 <h2 id="进程-process-和线程-Thread-关系"><a href="#进程-process-和线程-Thread-关系" class="headerlink" title="进程(process)和线程(Thread)关系"></a>进程(process)和线程(Thread)关系</h2><p><code>一个进程可以有多个线程，</code>如视频中同时听到声音，看到图片，看弹幕等。<code>一个进程至少有一个线程，线程是CPU调度和执行的单位</code></p>
 <p>很多多线程是模拟出来的，<code>真正的多线程是多个CPU，即多核，如服务器</code></p>
 <p><code>程序</code>：是指令和数据的有序集合，其本身没有，任何运行的含义，是一个<code>静态</code>的概念</p>
@@ -750,7 +751,8 @@
 <p>5、提交执行：Futureresult1=ser.submit(线程名称)</p>
 <p>6、获取结果：boolean r=result1.get()</p>
 <p>7、关闭服务：ser.shutdownNow();</p>
-<p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" alt="img"></p>
+<img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" class>
+
 <h2 id="Callable好处"><a href="#Callable好处" class="headerlink" title="Callable好处"></a>Callable好处</h2><p>1、可以定义为返回值</p>
 <p>2、可以抛出异常</p>
 <h1 id="静态代理（进程的实现原理）"><a href="#静态代理（进程的实现原理）" class="headerlink" title="静态代理（进程的实现原理）"></a>静态代理（进程的实现原理）</h1><p>你：真实角色</p>
@@ -772,7 +774,8 @@
 <p>3、删去括号</p>
 <p>4、删去花括号，<code>但只能是一条语句(以上可以一起执行)</code></p>
 <p>5、<code>有多个参数类型。去掉参数，用逗号隔开且用括号括起来</code></p>
-<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" alt="img"></p>
+<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" class>
+
 <p>1000毫秒=1秒</p>
 <h2 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h2><p>1、推荐线程自己停止下来</p>
 <p>2、建议使用一个标志位进行终止变量，当flag=false，则终止线程运行</p>
