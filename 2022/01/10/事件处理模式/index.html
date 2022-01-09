@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="事件处理模式1.事件　　事件是用户在界面上的一个操作（通常使用各种输入设备，如：鼠标、键盘等来完成）。  　　当一个事件发生时，该事件用一个事件对象来表示。事件对象有对应的事件类。不同的事件类描述不同类型的用户动作。事件类包含在java.awt.event和javax.swing.event包中。 2.事件源　　产生事件的组件叫事件源。在一个按钮上单击鼠标时，该按钮就是事件源，会产生一个Actio">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/.com//%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F.jpg">
 <meta property="article:published_time" content="2022-01-09T16:27:38.901Z">
-<meta property="article:modified_time" content="2022-01-09T16:30:06.647Z">
+<meta property="article:modified_time" content="2022-01-09T16:39:56.880Z">
 <meta property="article:author" content="Yuu Xii">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -175,7 +177,7 @@
 <h2 id="5-注册事件监听器"><a href="#5-注册事件监听器" class="headerlink" title="5.注册事件监听器"></a>5.注册事件监听器</h2><p>　　为了能够让事件监听器检查某个组件（事件源）是否发生了某些事件，并且在发生时激活事件处理器进行相应的处理，<strong>必须在事件源上注册事件监听器。</strong>这是通过使用事件源组件的以下方法来完成的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addXxxListener（事件监听器对象）</span><br><span class="line">Xxx对应相应的事件类。</span><br></pre></td></tr></table></figure>
 
-<p>![](D:\Program Files (x86)\图片\事件处理模式.jpg)</p>
+<p><img src="/.com//%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F.jpg"></p>
 <h2 id="重点！！！"><a href="#重点！！！" class="headerlink" title="重点！！！"></a>重点！！！</h2><p>**思路：创建一个该监视器对象的类–&gt;声明ActionListener接口–&gt;重写actionPerformed方法–&gt;再创建一个[任意命名]类从而创建监视器–&gt;通过addActionListener有监视器的类（监视器）服务于的对象 **</p>
 <p>编写一个监听器类，该监听器类实现了XXXListener接口，（假定监听器类的类名为MyXXXListener)；</p>
 <p>在MyXXXListener中的相应事件处理方法中编写事件处理代码（事件处理器）。</p>

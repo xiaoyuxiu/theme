@@ -165,7 +165,7 @@
       
         <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h1 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h1><h2 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h2><p>边吃饭边看手机，看起来是多个任务，但在同一时间里只做了一件事情</p>
 <h2 id="多线程-1"><a href="#多线程-1" class="headerlink" title="多线程"></a>多线程</h2><p>原来只有一条车道，慢慢因为车多了，道路堵塞，效率降低，因此开辟了一条道路</p>
-<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><p>![img](D:\Program Files (x86)\图片\多线程.jpg)</p>
+<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg" alt="img"></p>
 <h2 id="进程-process-和线程-Thread-关系"><a href="#进程-process-和线程-Thread-关系" class="headerlink" title="进程(process)和线程(Thread)关系"></a>进程(process)和线程(Thread)关系</h2><p><code>一个进程可以有多个线程，</code>如视频中同时听到声音，看到图片，看弹幕等。<code>一个进程至少有一个线程，线程是CPU调度和执行的单位</code></p>
 <p>很多多线程是模拟出来的，<code>真正的多线程是多个CPU，即多核，如服务器</code></p>
 <p><code>程序</code>：是指令和数据的有序集合，其本身没有，任何运行的含义，是一个<code>静态</code>的概念</p>
@@ -201,7 +201,7 @@
 <p>5、提交执行：Futureresult1=ser.submit(线程名称)</p>
 <p>6、获取结果：boolean r=result1.get()</p>
 <p>7、关闭服务：ser.shutdownNow();</p>
-<p><img src="/.com//../../../%E5%9B%BE%E7%89%87/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" alt="img"></p>
+<p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" alt="img"></p>
 <h2 id="Callable好处"><a href="#Callable好处" class="headerlink" title="Callable好处"></a>Callable好处</h2><p>1、可以定义为返回值</p>
 <p>2、可以抛出异常</p>
 <h1 id="静态代理（进程的实现原理）"><a href="#静态代理（进程的实现原理）" class="headerlink" title="静态代理（进程的实现原理）"></a>静态代理（进程的实现原理）</h1><p>你：真实角色</p>
@@ -223,7 +223,7 @@
 <p>3、删去括号</p>
 <p>4、删去花括号，<code>但只能是一条语句(以上可以一起执行)</code></p>
 <p>5、<code>有多个参数类型。去掉参数，用逗号隔开且用括号括起来</code></p>
-<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><p>![img](D:\Program Files (x86)\图片\多线程1.jpg)</p>
+<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><p><img src="/.com//%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" alt="img"></p>
 <p>1000毫秒=1秒</p>
 <h2 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h2><p>1、推荐线程自己停止下来</p>
 <p>2、建议使用一个标志位进行终止变量，当flag=false，则终止线程运行</p>
@@ -377,7 +377,7 @@
 <h2 id="5-注册事件监听器"><a href="#5-注册事件监听器" class="headerlink" title="5.注册事件监听器"></a>5.注册事件监听器</h2><p>　　为了能够让事件监听器检查某个组件（事件源）是否发生了某些事件，并且在发生时激活事件处理器进行相应的处理，<strong>必须在事件源上注册事件监听器。</strong>这是通过使用事件源组件的以下方法来完成的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addXxxListener（事件监听器对象）</span><br><span class="line">Xxx对应相应的事件类。</span><br></pre></td></tr></table></figure>
 
-<p>![](D:\Program Files (x86)\图片\事件处理模式.jpg)</p>
+<p><img src="/.com//%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F.jpg"></p>
 <h2 id="重点！！！"><a href="#重点！！！" class="headerlink" title="重点！！！"></a>重点！！！</h2><p>**思路：创建一个该监视器对象的类–&gt;声明ActionListener接口–&gt;重写actionPerformed方法–&gt;再创建一个[任意命名]类从而创建监视器–&gt;通过addActionListener有监视器的类（监视器）服务于的对象 **</p>
 <p>编写一个监听器类，该监听器类实现了XXXListener接口，（假定监听器类的类名为MyXXXListener)；</p>
 <p>在MyXXXListener中的相应事件处理方法中编写事件处理代码（事件处理器）。</p>
