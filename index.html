@@ -148,11 +148,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-SQL初级" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Git " class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/" class="article-date">
-  	<time datetime="2022-01-09T16:49:29.474Z" itemprop="datePublished">2022-01-10</time>
+      <a href="/2022/01/10/Git%20/" class="article-date">
+  	<time datetime="2022-01-10T08:16:27.618Z" itemprop="datePublished">2022-01-10</time>
 </a>
     </div>
   
@@ -163,515 +163,372 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SQL初级"><a href="#SQL初级" class="headerlink" title="SQL初级"></a>SQL初级</h1><h2 id="一、什么是SQL？"><a href="#一、什么是SQL？" class="headerlink" title="一、什么是SQL？"></a>一、什么是SQL？</h2><p>SQL 是**结构化查询语言 Structured Query Language **的缩写，用来访问和操作数据库系统。SQL 语句既可以查询数据库中的数据，也可以添加、更新和删除数据库中的数据，还可以对数据库进行管理和维护操作。不同的数据库，都支持 SQL，这样，我们通过学习 SQL 这一种语言，就可以操作各种不同的数据库。</p>
-<h3 id="1、SQL定义了这么几种操作数据库的能力："><a href="#1、SQL定义了这么几种操作数据库的能力：" class="headerlink" title="1、SQL定义了这么几种操作数据库的能力："></a>1、SQL定义了这么几种操作数据库的能力：</h3><h3 id="（1）DDL：Data-Definition-Language"><a href="#（1）DDL：Data-Definition-Language" class="headerlink" title="（1）DDL：Data Definition Language"></a>（1）DDL：Data Definition Language</h3><p>允许用户定义数据，也就是创建表、删除表、修改表结构这</p>
-<p>操作。通常，DDL由数据库管理员执行。</p>
-<h3 id="（2）DML：Data-Manipulation-Language"><a href="#（2）DML：Data-Manipulation-Language" class="headerlink" title="（2）DML：Data Manipulation Language"></a>（2）DML：Data Manipulation Language</h3><p>为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。</p>
-<h3 id="（3-DQL：Data-Query-Language"><a href="#（3-DQL：Data-Query-Language" class="headerlink" title="（3)DQL：Data Query Language"></a>（3)DQL：Data Query Language</h3><p>允许用户查询数据，这也是通常最频繁的数据库日常操作。</p>
-<p> 即：DDL-定义数据（增删表，修改表结构）DML-管理数据（增删改数  据）DQL-查询数据</p>
-<h2 id="二、MySQL"><a href="#二、MySQL" class="headerlink" title="二、MySQL"></a>二、MySQL</h2><p>MySQL是目前应用最广泛的开源关系数据库，所使用的 SQL 语言是用于访问数据库的最常用的标准化语言，其特点为<strong>体积小、速度快、总体拥有成本低，尤其是开放源码这一特点。</strong></p>
-<h2 id="三、关系数据库管理系统-Relational-Database-Management-System-的特点："><a href="#三、关系数据库管理系统-Relational-Database-Management-System-的特点：" class="headerlink" title="三、关系数据库管理系统(Relational Database Management System)的特点："></a>三、关系数据库管理系统(Relational Database Management System)的特点：</h2><p>1.数据以表格的形式出现</p>
-<p>2.每行为各种记录名称</p>
-<p>3.每列为记录名称所对应的数据域</p>
-<p>4.许多的行和列组成一张表单</p>
-<p>5.若干的表单组成database（数据库）</p>
-<h3 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、<strong>基本概念</strong></h3><p><strong>数据库:</strong> 数据库是一些关联表的集合。</p>
-<p><strong>数据表:</strong> 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</p>
-<p><strong>列:</strong> 一列(数据元素) 包含了相同类型的数据, 例如邮政编码的数据。</p>
-<p><strong>行：</strong>一行（=元组，或记录）是一组相关的数据，例如一条用户订阅的数据。</p>
-<p><strong>冗余</strong>：存储两倍数据，冗余降低了性能，但提高了数据的安全性。</p>
-<p><strong>主键</strong>：主键是唯一的。一个数据表中只能包含一个主键。你可以使用主键来查询数据。</p>
-<p><strong>外键：</strong>外键用于关联两个表。</p>
-<p><strong>复合键</strong>：复合键（组合键）将多个列作为一个索引键，一般用于复合索引。</p>
-<p><strong>索引：</strong>使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。</p>
-<p><strong>参照完整性:</strong> 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt="IMG_256"></p>
-<p><strong>表头</strong><strong>(header)</strong>: 每一列的名称;</p>
-<p><strong>列</strong><strong>(col):</strong> 具有相同数据类型的数据的集合;</p>
-<p><strong>行</strong><strong>(row)</strong>: 每一行用来描述某条记录的具体信息;</p>
-<p><strong>值</strong><strong>(value)</strong>: 行的具体信息, 每个值必须与该列的数据类型相同;</p>
-<p><strong>键</strong><strong>(key)</strong>: 键的值在当前列中具有唯一性。</p>
-<h2 id="四、使用终端操作数据库-（命令后加；）"><a href="#四、使用终端操作数据库-（命令后加；）" class="headerlink" title="四、使用终端操作数据库 （命令后加；）"></a>四、使用终端操作数据库 （命令后加；）</h2><h3 id="1、如何登录数据库服务器"><a href="#1、如何登录数据库服务器" class="headerlink" title="1、如何登录数据库服务器"></a>1、如何登录数据库服务器</h3><p> mysql -uroot -p登陆密码（登陆本机）</p>
-<p> Mysql -h主机名 -p端口名 -u用户名 -p登陆密码</p>
-<h3 id="2、退出"><a href="#2、退出" class="headerlink" title="2、退出"></a>2、退出</h3><p>exit 或ctrl+c</p>
-<h3 id="3、如何查询数据库服务器中的数据库"><a href="#3、如何查询数据库服务器中的数据库" class="headerlink" title="3、如何查询数据库服务器中的数据库"></a>3、如何查询数据库服务器中的数据库</h3><p>  show database；</p>
-<p><img src="file:///C:/Users/admin/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="IMG_256"></p>
-<h3 id="4、如何选中一个数据库进行操作"><a href="#4、如何选中一个数据库进行操作" class="headerlink" title="4、如何选中一个数据库进行操作"></a>4、如何选中一个数据库进行操作</h3><p>  use 数据库</p>
-<p>  Show tables 从当前数据库查看信息</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%931.png" alt="IMG_256"></p>
-<p>show tables from 数据库名 可从别的数据库查看别的数据库信息</p>
-<p>select database(); 查看当前所在数据库</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%932.png" alt="IMG_256"></p>
-<h3 id="5、创建表和列"><a href="#5、创建表和列" class="headerlink" title="5、创建表和列"></a>5、创建表和列</h3><p>create table + 表名（</p>
-<p>再是列的种类</p>
-<p>若是结束了也用）；结尾</p>
-<h3 id="6、查看表的内容"><a href="#6、查看表的内容" class="headerlink" title="6、查看表的内容"></a>6、查看表的内容</h3><p>desc +表名</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%933.png" alt="IMG_256"></p>
-<h3 id="7、查看表的数据"><a href="#7、查看表的数据" class="headerlink" title="7、查看表的数据"></a>7、查看表的数据</h3><p>select * from +表名</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%934.png" alt="IMG_256"></p>
-<h3 id="8、表中插入数据"><a href="#8、表中插入数据" class="headerlink" title="8、表中插入数据"></a>8、表中插入数据</h3><p>Insert into +表名（数据类型）value+（内容）</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%935.png" alt="IMG_256"></p>
-<h3 id="9、修改数据"><a href="#9、修改数据" class="headerlink" title="9、修改数据"></a>9、修改数据</h3><p>update 表名 set 数据类型 = ’修改内容‘ where 数据类型 = 内容 </p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%936.png" alt="IMG_256"></p>
-<h3 id="10、删除数据"><a href="#10、删除数据" class="headerlink" title="10、删除数据"></a>10、删除数据</h3><p> delete from stuinfo where内容；</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%937.png" alt="IMG_256"></p>
-<h3 id="11、查看数据库版本"><a href="#11、查看数据库版本" class="headerlink" title="11、查看数据库版本"></a>11、查看数据库版本</h3><p>登录到mysql服务器：select version();</p>
-<p>没有登陆：mysql –version/mysql –V</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%938.png" alt="IMG_256"></p>
-<h3 id="12、mysql语法规范"><a href="#12、mysql语法规范" class="headerlink" title="12、mysql语法规范"></a>12、mysql语法规范</h3><p>不区分大小写，但建议关键字大小，表名列名小写</p>
-<p>每条命令分号结尾，根据需要可以进行缩进，换行</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%939.png" alt="IMG_256"></p>
-<p>注释 —–单行：#注释文字     多行：/<em>注释文字</em>/</p>
-<h2 id="五、sql语言"><a href="#五、sql语言" class="headerlink" title="五、sql语言"></a>五、sql语言</h2><p>分为DQL语言、DML语言、   DDL语言、TCL语言</p>
-<h3 id="1、DQL语言"><a href="#1、DQL语言" class="headerlink" title="1、DQL语言"></a>1、DQL语言</h3><h4 id="1）基础查询"><a href="#1）基础查询" class="headerlink" title="1）基础查询"></a>1）基础查询</h4><p>select+查询列表 from+表名；显示什么</p>
-<p>类似于system.out.print()打印什么</p>
-<p><strong>特点：1、查询列表可以是：表中的字段、常量值、表达式、函数</strong></p>
-<p>​            <strong>2、查询的结果是一个虚拟的表格</strong></p>
-<h4 id="2-use-启动的数据库名；"><a href="#2-use-启动的数据库名；" class="headerlink" title="2)use 启动的数据库名；"></a>2)use 启动的数据库名；</h4><p>查询单个字段 select <code>字段名</code> from 对应的表名；</p>
-<p>查询表中的多个字段 select <code>字段名</code>，<code>字段名</code>….. from 对应的表名；</p>
-<p>查询表中的所有字段</p>
-<p>select <code>字段名</code>，<code>字段名</code>….. （可直接双击左边数据库的字段名，会按选择顺序显示）from 对应的表名；</p>
-<p>select * from 对应的表名；</p>
-<p>查询表中的常量值，只要是字符用双引号 select 100；</p>
-<p>查询表中的表达式 select 100%98；</p>
-<p>查询表中的函数（方法） select version();</p>
-<h5 id="起别名（方便理解）"><a href="#起别名（方便理解）" class="headerlink" title="起别名（方便理解）"></a>起别名（方便理解）</h5><p>方式一，用as</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">100</span><span class="operator">&amp;</span><span class="number">98</span> <span class="keyword">As</span> 别名；</span><br></pre></td></tr></table></figure>
-
-<p>方式二，用空格</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">100</span><span class="operator">&amp;</span><span class="number">98</span> 别名，<span class="keyword">first</span> 别名 <span class="keyword">from</span> 对应的表名；</span><br></pre></td></tr></table></figure>
-
-<h5 id="去重-diatince"><a href="#去重-diatince" class="headerlink" title="去重  diatince"></a>去重  diatince</h5><p>案例：查询员工表中涉及的所有部门编号</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> department <span class="keyword">from</span> 对应的表名；</span><br></pre></td></tr></table></figure>
-
-<h5 id="号的作用-运算符，两个操作数都是数值型"><a href="#号的作用-运算符，两个操作数都是数值型" class="headerlink" title="+号的作用  运算符，两个操作数都是数值型"></a>+号的作用  运算符，两个操作数都是数值型</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">100</span><span class="operator">+</span><span class="number">90</span> </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ‘<span class="number">123</span>’<span class="operator">+</span><span class="number">90</span> </span><br><span class="line">#其中一方为字符串，试图将字符型数值转换成数值型，如果转换成功，则继续做加法运算</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ‘<span class="keyword">join</span>’<span class="operator">+</span><span class="number">90</span> </span><br><span class="line">#如果转换失败，则返回原始数据</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">null</span><span class="operator">+</span><span class="number">90</span> </span><br><span class="line">#只要其中一方为<span class="keyword">null</span> ，则结果显示为<span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<p> 案例：查询员工名和姓连接成一个字段，并显示为姓名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> concat(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>) <span class="keyword">As</span> 别名 <span class="keyword">from</span> 对应的表名</span><br><span class="line">#条件，如果c为空返回零</span><br><span class="line"><span class="keyword">select</span> ifnull(<span class="string">&#x27;c&#x27;</span>，<span class="number">0</span>) <span class="keyword">As</span> 别名 <span class="keyword">from</span> 对应的表名</span><br></pre></td></tr></table></figure>
-
-<h5 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h5><p>语法：select 查询列表 from 表名 where 筛选条件；（条件成立即可过滤出来） </p>
-<p><strong>分类：按条件运算符 &lt; &gt; = != &lt;&gt;也为不等 &gt;= &lt;=</strong></p>
-<p>​            <strong>按逻辑运算符 &amp;&amp; || ！用于链接条件表达式</strong></p>
-<p>​            <strong>模糊查询 like 特点：和通配符搭配 ，</strong></p>
-<p>​           <strong>%任意多个字符，包含0个字符</strong></p>
-<p>​            <strong>_任意单个字符</strong></p>
-<p>​           <strong>between and 特点：提高简洁读 包含临界值</strong></p>
-<p>​           <strong>要从小到大排序</strong></p>
-<p>​           <strong>in 特点：用于去判断某字段的值是不是in列表里的值</strong></p>
-<p>​           <strong>字段的值要同种类型</strong></p>
-<p>​           <strong>is null特点：=或&lt;&gt;不能用于判断null值</strong></p>
-<hr>
-<h5 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h5><p>查询工资高于12000的员工：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> salary<span class="operator">&gt;</span><span class="number">12000</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><p>查询工资在12000到15000的员工：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> salary<span class="operator">&gt;</span><span class="number">12000</span> <span class="operator">&amp;&amp;</span>salary <span class="operator">&lt;</span><span class="number">15000</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h5><p>like 像 （条件不是特别具体）</p>
-<p>查询员工名包含第三个字符e，第五个字符为a的员工（条件不是特</p>
-<p>别具体）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> name <span class="keyword">like</span>‘__e_a<span class="operator">%</span>’（_代表字符个数） </span><br></pre></td></tr></table></figure>
-
-<p>查询员工名包含第二个字符_的员工（条件不是特别具体）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> name <span class="keyword">like</span>‘_\_<span class="operator">%</span>’ <span class="keyword">escape</span> ‘\’（任意符号都可代表转义，用<span class="keyword">escape</span>）    </span><br></pre></td></tr></table></figure>
-
-<h5 id="between-and-在……-之间"><a href="#between-and-在……-之间" class="headerlink" title="between and 在…….之间"></a>between and 在…….之间</h5><p>查询员工编号在100到200之间</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> id<span class="operator">&gt;</span><span class="number">100</span> <span class="operator">&amp;&amp;</span> id <span class="operator">&lt;</span><span class="number">200</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee id <span class="keyword">where</span> id  <span class="keyword">between</span> <span class="number">100</span> <span class="keyword">and</span> <span class="number">200</span> </span><br></pre></td></tr></table></figure>
-
-<h5 id="In-用于去判断某字段的值是不是in列表里的值"><a href="#In-用于去判断某字段的值是不是in列表里的值" class="headerlink" title="In 用于去判断某字段的值是不是in列表里的值"></a>In 用于去判断某字段的值是不是in列表里的值</h5><p>查询员工工种编号是IT 、AD中的一个员工编号</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee id <span class="keyword">where</span> job id <span class="operator">=</span> ‘IT’<span class="operator">||</span> job id <span class="operator">=</span> ‘<span class="keyword">AT</span>’</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee id <span class="keyword">where</span> job id <span class="keyword">in</span>（‘IT’‘<span class="keyword">AT</span>’）</span><br></pre></td></tr></table></figure>
-
-<h5 id="is-null-只可以判断null值"><a href="#is-null-只可以判断null值" class="headerlink" title="is null 只可以判断null值"></a>is null 只可以判断null值</h5><p>查询没有（有）奖金的员工名和奖金率</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee id <span class="keyword">where</span> comsionn <span class="keyword">is</span> (<span class="keyword">not</span> )<span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>安全等于 &lt;=&gt; 判断普通类型的值，判断是否等于，等于返回</strong></p>
-<p>查询没有（有）奖金的员工名和奖金率</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee id <span class="keyword">where</span> comsionn <span class="operator">&lt;=&gt;</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h5><p><strong>引入：select * from employee id 显示原始的数据</strong></p>
-<p>当我们要按工资的高低先后显示出来，可直接在图形化界面直接点那个表头就可以排序</p>
-<p> 用sql语句：select 查询列表 from 表 【where筛选条件】order by （支持别名）排序列表【ascldesc】 </p>
-<p> <strong>特点: 高到低：desc   低到高：asc  不写默认是低到高</strong></p>
-<p> order by 可以支持多个字段、单个字段、表达式、函数、别名</p>
-<p> order by 一般放在查询语句最后面，limit的子句除外</p>
-<p>查询员工工资从高到低：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> </span><br></pre></td></tr></table></figure>
-
-<p>查询部门编号大于等于90的员工信息，按入职时间先后进行排序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> department_id<span class="operator">&gt;=</span><span class="number">90</span> <span class="keyword">order</span> <span class="keyword">by</span> hirdate <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
-
-<p>按年薪高低显示员工年薪和信息（表达式）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>，salary<span class="operator">*</span><span class="number">12</span><span class="operator">*</span>(<span class="number">1</span><span class="operator">+</span>ifnull(commission_pat,<span class="number">0</span>) 年薪 <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary<span class="operator">*</span><span class="number">12</span><span class="operator">*</span>(<span class="number">1</span><span class="operator">+</span>ifnull(commission_pat,<span class="number">0</span>)<span class="operator">/</span>年薪 <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
-
-<p>按姓名长度显示员工姓名和工资（函数）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> length（last_name),last_name,salsry <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> length（last_name) <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询员工信息，先按工资排序，再按员工编号排序（多个字段）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from employee order by salary asc，employee_id desc； </span><br></pre></td></tr></table></figure>
-
-<h5 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h5><p>功能:类似于java中的方法，具备的含义将实现某个功能的逻辑语句封装到一个方法中，对外暴露方法名</p>
-<p>好处：隐藏功能的实现细节，提高代码的重用性</p>
-<p>调用：select 函数名（实参列表） 【from 表】 </p>
-<p>特点：该方法叫什么（函数名）  干什么（函数功能）</p>
-<p>分类：单行函数： 做处理 一个返一个    </p>
-<p>分组函数： 做统计使用，又为统计函数、聚合函数、组函数  多个返一个</p>
-<p>单行函数：字符、数学、日期、其他函数、流程控制函数</p>
-<h6 id="1、字节函数："><a href="#1、字节函数：" class="headerlink" title="1、字节函数："></a>1、字节函数：</h6><p>Length获取参数的字节个数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> length(‘<span class="keyword">join</span>’)  返回<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> length(‘张三丰hahaha’)  返回<span class="number">15</span> 一个汉字占<span class="number">3</span>个字节</span><br></pre></td></tr></table></figure>
-
-<h6 id="2、Concat拼接字符串"><a href="#2、Concat拼接字符串" class="headerlink" title="2、Concat拼接字符串"></a>2、Concat拼接字符串</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> concat(last_name,_,first_name) </span><br><span class="line">姓名<span class="keyword">from</span> employee   Uper、lower大写小写</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> Uper(‘<span class="keyword">join</span>’) 返回<span class="keyword">JOIN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">lower</span>(‘<span class="keyword">JOIN</span>’) 返回<span class="keyword">join</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="3、将姓大写，名小写，拼接"><a href="#3、将姓大写，名小写，拼接" class="headerlink" title="3、将姓大写，名小写，拼接"></a>3、将姓大写，名小写，拼接</h6><p>Substr、substring 截取字符串，索引从1开始</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> substr（‘李莫愁爱上了陆展源’，<span class="number">6</span>）out_put; </span><br><span class="line">#返回了陆展源</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> substr（‘李莫愁爱上了陆展源’，<span class="number">1</span>，<span class="number">3</span>）out_put; </span><br><span class="line">#返回李莫愁</span><br></pre></td></tr></table></figure>
-
-<h6 id="4、Instr返回第一次出现的起始索引"><a href="#4、Instr返回第一次出现的起始索引" class="headerlink" title="4、Instr返回第一次出现的起始索引"></a>4、Instr返回第一次出现的起始索引</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> Instr（‘李莫愁爱上了陆展源’，’陆展源‘）<span class="keyword">as</span> out_put</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> employee； </span><br><span class="line">#返回<span class="number">7</span>，找不到返回<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="5、trim-去前后"><a href="#5、trim-去前后" class="headerlink" title="5、trim 去前后"></a>5、trim 去前后</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> trim（‘a’ <span class="keyword">from</span> ‘aaaaaa张aaaaaaa翠山aaaaaaaaaaaaaaaaa ’）<span class="keyword">as</span> out_put </span><br><span class="line">#返回张aaaaaaa翠山</span><br></pre></td></tr></table></figure>
-
-<h6 id="6、Lpad-用指定字符左填充"><a href="#6、Lpad-用指定字符左填充" class="headerlink" title="6、Lpad 用指定字符左填充"></a>6、Lpad 用指定字符左填充</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> lpad（‘殷素素’ ，<span class="number">5</span>，‘<span class="operator">*</span>’）<span class="keyword">as</span> out_put </span><br><span class="line">#返回<span class="operator">*</span><span class="operator">*</span>殷素素</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h6 id="7、rpad-用指定字符右填充"><a href="#7、rpad-用指定字符右填充" class="headerlink" title="7、rpad 用指定字符右填充"></a>7、rpad 用指定字符右填充</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> rpad（‘殷素素’ ，<span class="number">5</span>，‘<span class="operator">*</span>’）<span class="keyword">as</span> out_put 返回殷素素</span><br><span class="line"></span><br><span class="line">#replace 替换</span><br></pre></td></tr></table></figure>
-
-<h6 id="8、replace-替换"><a href="#8、replace-替换" class="headerlink" title="8、replace 替换"></a>8、replace 替换</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> replace（‘殷素素’ ，‘殷’，‘赵’）<span class="keyword">as</span> out_put 返回赵素素</span><br></pre></td></tr></table></figure>
-
-<h5 id="数学函数："><a href="#数学函数：" class="headerlink" title="数学函数："></a>数学函数：</h5><h6 id="1、Round-四舍五入"><a href="#1、Round-四舍五入" class="headerlink" title="1、Round 四舍五入"></a>1、Round 四舍五入</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> round（<span class="number">1.45</span>）；先弄绝对值 再加正负号</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> round（<span class="number">1.457</span>，<span class="number">2</span>）；小数点保留两位，返回<span class="number">1.46</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="2、ceil-向上取整，返回大于等于参数的最小整数"><a href="#2、ceil-向上取整，返回大于等于参数的最小整数" class="headerlink" title="2、ceil 向上取整，返回大于等于参数的最小整数"></a>2、ceil 向上取整，返回大于等于参数的最小整数</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> ceil（<span class="number">1.45</span>）； 返回<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> ceil（<span class="number">1.00</span>）； 返回<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>3、Floor 向下取整，返回小于等于参数的最大整数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> floor（<span class="number">-9.99</span>）； 返回<span class="number">-10</span></span><br></pre></td></tr></table></figure>
-
-<p>4、truncate截断，保留小数后几位</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">truncate</span>（<span class="number">1.65</span>，<span class="number">1</span>）； 返回<span class="number">1.6</span></span><br></pre></td></tr></table></figure>
-
-<p>5、Mod 取余，被除数负数取余为负数，被除数正数取余为正数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mod（a，b） 语法：a<span class="operator">-</span> （a<span class="operator">/</span>b）<span class="operator">*</span>b</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> mod（<span class="number">10</span>，<span class="number">3</span>） <span class="number">10</span><span class="operator">%</span><span class="number">3</span> 返回<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="日期函数："><a href="#日期函数：" class="headerlink" title="日期函数："></a>日期函数：</h5><p>1、Now 返回当前系统日期+时间</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> now（）</span><br></pre></td></tr></table></figure>
-
-<p>2、curdate返回当前系统日期</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> curdate（）</span><br></pre></td></tr></table></figure>
-
-<p>3、Curtime返回当前系统时间</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> curtime（）</span><br></pre></td></tr></table></figure>
-
-<p>4、获取指定的年月日小时分钟秒</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">year</span>（now（））年；</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> <span class="keyword">year</span>（<span class="number">1999</span>）年；</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> <span class="keyword">month</span>（now（））月</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> month_name（now（））月</span><br><span class="line"></span><br><span class="line">Str_to_date将日期格式的字符转换成指定格式的日期</span><br><span class="line"></span><br><span class="line">Str_to_date（‘<span class="number">9</span><span class="number">-13</span><span class="number">-1999</span>’，‘<span class="operator">%</span>m<span class="operator">-</span><span class="operator">%</span>d<span class="operator">-</span><span class="operator">%</span>Y）   <span class="number">1999</span><span class="number">-09</span><span class="number">-13</span></span><br><span class="line"></span><br><span class="line">Date_format:将日期转换成字符</span><br><span class="line"></span><br><span class="line">Date_format（‘<span class="number">2018</span><span class="operator">/</span><span class="number">6</span><span class="operator">/</span><span class="number">6</span>’，‘<span class="operator">%</span>Y年<span class="operator">%</span>m月<span class="operator">%</span>d日） <span class="number">2018</span>年<span class="number">6</span>月<span class="number">6</span>日</span><br></pre></td></tr></table></figure>
-
-<h5 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> vesion（）查看当前数据库版本</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> database（）查看数据库</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span>（）查看用户</span><br></pre></td></tr></table></figure>
-
-<h5 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h5><p>Select if（条件，ture表达式值，flse表达式值）</p>
-<p>案例：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> if（<span class="number">10</span><span class="operator">&gt;</span><span class="number">5</span>，大，小）</span><br></pre></td></tr></table></figure>
-
-<h6 id="1、case函数："><a href="#1、case函数：" class="headerlink" title="1、case函数："></a>1、case函数：</h6><p>使用一：类似于java的switch case的效果</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Case</span>（要判断的字段表达式）</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span>常量值<span class="number">1</span> <span class="keyword">then</span> 要显示的语句<span class="number">1</span>；</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span>常量值<span class="number">2</span> <span class="keyword">then</span> 要显示的语句<span class="number">2</span>；</span><br><span class="line"></span><br><span class="line">   ..............................</span><br><span class="line"></span><br><span class="line"><span class="keyword">Else</span> 要显示的语句；</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span>  </span><br></pre></td></tr></table></figure>
-
-<p>【end可单独使用，也可搭配select】</p>
-<p>案例查询员工工资 部门号为30 显示的工资为原工资的1.1倍</p>
-<p>​         部门号为40 显示的工资为原工资的1.2倍</p>
-<p>​         其他员工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> salary原始工资，department_id，</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> department_id</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> <span class="number">30</span> <span class="keyword">then</span> salary<span class="operator">*</span><span class="number">1.1</span> （不是语句不放分号）</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> <span class="number">40</span> <span class="keyword">then</span> salary<span class="operator">*</span><span class="number">1.2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Else</span> salary</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">as</span> 新工资</span><br><span class="line"></span><br><span class="line"><span class="keyword">From</span> employee</span><br></pre></td></tr></table></figure>
-
-<p>使用二：类似于java多重if</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">If（条件<span class="number">1</span>）&#123;</span><br><span class="line"></span><br><span class="line">语句<span class="number">1</span>；</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>（条件<span class="number">2</span>）&#123;</span><br><span class="line"></span><br><span class="line">语句<span class="number">2</span>；</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">语句n；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Case</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> 条件<span class="number">1</span> <span class="keyword">then</span> 值<span class="number">1</span>或语句<span class="number">1</span>；（是<span class="literal">true</span>）</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> 条件<span class="number">2</span> <span class="keyword">then</span> 值<span class="number">2</span>或语句<span class="number">2</span>；（是<span class="literal">true</span>）</span><br><span class="line"></span><br><span class="line">​        ........</span><br><span class="line"></span><br><span class="line"><span class="keyword">Else</span> 要显示的值或语句</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure>
-
-<p>查询员工新工资</p>
-<p>如果工资&gt;20000，显示A级别</p>
-<p>如果工资&gt;15000，显示B级别</p>
-<p>如果工资&gt;10000，显示C级别</p>
-<p>否则，显示D</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> salary原始工资，department_id，</span><br><span class="line"></span><br><span class="line"><span class="keyword">Case</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> salary <span class="operator">&gt;</span><span class="number">20000</span> <span class="keyword">then</span>‘A’ （不是语句不放分号）</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> salary <span class="operator">&gt;</span><span class="number">15000</span> <span class="keyword">then</span> ‘B’</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> salary <span class="operator">&gt;</span><span class="number">10000</span> <span class="keyword">then</span> ‘C’</span><br><span class="line"></span><br><span class="line"><span class="keyword">Else</span> ‘D’</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">as</span> 新工资</span><br><span class="line"></span><br><span class="line"><span class="keyword">From</span> employee</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<h5 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h5><p>特点：1、sum、avg一般用于处理数值型</p>
-<p>​            2、max、min、count、用于处理任何类型</p>
-<p>​            3、分组函数都null没有参与运算</p>
-<p>​            4、可以和distinct搭配，去重</p>
-<p>​            5、和分组函数一同查询的字段有限制，要求是ground by的字段</p>
-<p>select avg（salary）只有一个，employee_id很多 from employee</p>
-<h6 id="1、Sum求和"><a href="#1、Sum求和" class="headerlink" title="1、Sum求和"></a>1、Sum求和</h6><p>  简单的使用 </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sun（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<h6 id="2、Avg平均值"><a href="#2、Avg平均值" class="headerlink" title="2、Avg平均值"></a>2、Avg平均值</h6><p> 简单的使用 </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> avg（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<h6 id="3、Max最大值-可支持字符、日期"><a href="#3、Max最大值-可支持字符、日期" class="headerlink" title="3、Max最大值 可支持字符、日期"></a>3、Max最大值 可支持字符、日期</h6><p> 简单的使用</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> max（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<h6 id="4、Min最小值-可支持字符、日期"><a href="#4、Min最小值-可支持字符、日期" class="headerlink" title="4、Min最小值  可支持字符、日期"></a>4、Min最小值  可支持字符、日期</h6><p> 简单的使用 </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<h6 id="5、Count计算个数"><a href="#5、Count计算个数" class="headerlink" title="5、Count计算个数"></a>5、Count计算个数</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span><span class="operator">/</span>常量值<span class="operator">/</span>阿拉伯数字）<span class="keyword">from</span> employee 统计行数</span><br></pre></td></tr></table></figure>
-
-<p>效率–mysiam 存储引擎下，count（*）效率最高，默认的引擎innoob，count（*）和count（1）效率差不都，但比count（字段）快，所以一般使用 count（*）统计行数</p>
-<p>简单的使用 </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<p>结合：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sun（salary）， avg（salary），max（salary）， min（salary），count（salary）<span class="keyword">from</span> employee</span><br><span class="line"><span class="keyword">select</span> sun（salary）， round(avg（salary），<span class="number">2</span>) max（salary）， min（salary），count（salary）<span class="keyword">from</span> employee</span><br></pre></td></tr></table></figure>
-
-<p><strong>相差天数：datediff（晚，早）</strong></p>
-<h5 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h5><p>引入：查询每个部门的平均工资</p>
-<p>语法: <strong>group by字句语法</strong> </p>
-<p><strong>Select 分组函数，列（要求出现在group by的后面）from 表【where 筛选条件】group by 分组的列表【order by子句】</strong></p>
-<p>注意：查询列表比较特殊，要求是分组函数和group by后出现的字段</p>
-<p>特点：1、条件分为两类，数据源不一样</p>
-<p>分组前筛选（原始表，库里面真实存在的）group by字句where</p>
-<p>分组后筛选（分组后的结果集） group by字句后 having</p>
-<p>分组函数做条件是放在having子句中</p>
-<p>能用分组前筛选的，优先考虑使用分组前筛选</p>
-<p>2、group by字句支持的单个字段分组（多个字段之间用逗号隔开没有顺序要求），支持表达式和函数，用的比较少</p>
-<p>3、也可以添加排序（排序放在整个分组）</p>
-<p>每个工种的最高工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> max（salary），job_id <span class="keyword">from</span> employees <span class="keyword">group</span> <span class="keyword">by</span> job_id</span><br></pre></td></tr></table></figure>
-
-<p>每个位置的部门个数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span>），location_id <span class="keyword">from</span> department <span class="keyword">group</span> <span class="keyword">by</span> location_id</span><br></pre></td></tr></table></figure>
-
-<p>查询邮箱中包含a字符的，每个部门的平均工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> avg（salary），department_id <span class="keyword">from</span> employee <span class="keyword">where</span> emails <span class="keyword">like</span> ‘<span class="operator">%</span>a<span class="operator">%</span>’ <span class="keyword">group</span> <span class="keyword">by</span> department_id</span><br></pre></td></tr></table></figure>
-
-<p>查询有奖金的每个领导手下员工最高工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> max（salary），manager_id <span class="keyword">from</span> employee <span class="keyword">where</span> commission_pct <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">group</span> <span class="keyword">by</span> manager_id</span><br></pre></td></tr></table></figure>
-
-<p>查询哪个部门的员工个数大于2 (分组后的筛选having)</p>
-<p>(1)查询每个部门的员工个数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span>），department_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> departmentr_id</span><br></pre></td></tr></table></figure>
-
-<p>(2) 根据上述结果进行筛选，查询哪个部门的员工个数大于2</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span>），department_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> departmentr_id <span class="keyword">having</span> count（<span class="operator">*</span>）<span class="operator">&gt;</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>查询每个工种有奖金的员工的最高工资大于12000的工种编号和最高工资</p>
-<p>(1)查询每个工种有奖金的员工的最高工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> max（salsry），job_id <span class="keyword">from</span> employee <span class="keyword">where</span> comsion_pct <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">group</span> <span class="keyword">by</span> job_id</span><br></pre></td></tr></table></figure>
-
-<p>(2)根据上述结果进行筛选，查询最高工资大于12000</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> max（salsry），job_id <span class="keyword">from</span> employee <span class="keyword">where</span> comsion_pct <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">group</span> <span class="keyword">by</span> job_id <span class="keyword">having</span> max（salsry）<span class="operator">&gt;</span><span class="number">12000</span></span><br></pre></td></tr></table></figure>
-
-<p>查询领导编号&gt;102的每个领导手下的员工最低工资大于5000的领导编号是哪个，以及最低工资</p>
-<p> (1)查询每个领导手下最低工资的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salsry），manager_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> manager_id</span><br></pre></td></tr></table></figure>
-
-<p>(2)查询编号&gt;102，最低工资大于5000</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salsry），manager_id <span class="keyword">from</span> employee <span class="keyword">where</span> manage<span class="operator">&gt;</span><span class="number">102</span> <span class="keyword">group</span> <span class="keyword">by</span> manager_id <span class="keyword">having</span> min（salsry）<span class="operator">&gt;</span><span class="number">5000</span></span><br></pre></td></tr></table></figure>
-
-<p>按员工姓名长度分组，查询每一组员工个数&gt;5的有哪些</p>
-<p>(1)查询每个长度的员工个数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span>），length（last_name）<span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> length（last_name）</span><br></pre></td></tr></table></figure>
-
-<p>(2)查询员工个数&gt;5</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> count（<span class="operator">*</span>），length（last_name）<span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> length（last_name）<span class="keyword">having</span> count（<span class="operator">*</span>）<span class="operator">&gt;</span><span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>查询一下每个部门每个工种的平均工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> avg（<span class="operator">*</span>），department_id ，job_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> department_id ，job_id</span><br></pre></td></tr></table></figure>
-
-<p>查询一下每个部门每个工种的平均工资大于1000，并且按平均工资高低显示出来</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> avg（<span class="operator">*</span>），department_id ，job_id <span class="keyword">from</span> employee <span class="keyword">where</span> department_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">group</span> <span class="keyword">by</span> department_id ，job_id <span class="keyword">having</span> avg（<span class="operator">*</span>）<span class="operator">&gt;</span><span class="number">10000</span> <span class="keyword">order</span> <span class="keyword">by</span> avg（<span class="operator">*</span>）<span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h5><p>含义：又称多表查询，当查询的字段来自于多个表时，就会用到连接查询</p>
-<p>笛卡尔集错误情况：select count（*）from beauty 假设输出12行</p>
-<p>​                                   select count（*）from boys 假设输出4行</p>
-<p>​                                   最终结果为 12*4=48</p>
-<p>如何发生：没有有效的连接条件</p>
-<p>避免发生：有有效的连接条件</p>
-<p>分类：按年代分类——sq192标准：仅仅支持内连接</p>
-<p>​            sq199标准：支持内连接+外连接（左外和右外）+交叉连接</p>
-<p>按功能分类——内连接：等值连接、非等值连接、自连接</p>
-<p>​                           外连接：左外连接、右外连接、圈外练就额</p>
-<p>​                           交叉连接</p>
-<h6 id="一、sql192语法"><a href="#一、sql192语法" class="headerlink" title="一、sql192语法"></a>一、sql192语法</h6><h6 id="1、等值连接"><a href="#1、等值连接" class="headerlink" title="1、等值连接"></a>1、等值连接</h6><p>特点：夺标等值连接的结果为夺标的交集部分；n表连接，至少需要 </p>
-<p>N-1个连接条件；多表的顺序没有要求；一般需要为表起别名；可以搭配所有的子句</p>
-<table>
+        <h1 id="Git-：目前世界上最先进的分布式版本控制系统"><a href="#Git-：目前世界上最先进的分布式版本控制系统" class="headerlink" title="Git ：目前世界上最先进的分布式版本控制系统"></a>Git ：目前世界上最先进的分布式版本控制系统</h1><p>git的最基本作用是版本控制，比如你写一个文档，老板一直让你改，这时笨的人会在原文档上直接改，聪明一点的会复制一下原文档，在副本上修改，这时老板说你的第三版比较好，笨的人煞笔了。。聪明一点的就直接拷贝了第三版给客户发过去了。然后聪明一点的认为这次的事情完事了把其他没用的都删了，突然有一天老板说客户的意见和你最后一版的相同，这时聪明一点的人也煞笔了。。。。</p>
+<p>来了个最聪明的人，会用git，他在本地建了一个版本库，每次老板让他修改，他就把之前的版本提交一下，并标明这版的主要特点，这样文件夹里就只有一个文档，每次老板说要那个版本的，他就直接从版本库里恢复一下。</p>
+<p>git通常在编程中会用到，通常是多个人同时协作一个项目，有可能出现两个人同时修改一个文件，这时后提交的人会遇到冲突，需要解决冲突；git能够记录每个人的提交修改等形成日志，可以根据提交记录进行回滚；并且git支持分布式部署。</p>
+<p><img src="/2022/01/10/Git%20/wps1.jpg" alt="img"> </p>
+<h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><p>1、远程（remote）通过<u><strong>克隆或者提取</strong></u>的方式到仓库（repository）再通过<u><strong>查看</strong></u>的  方式到工作区（workspace）</p>
+<p>2、远程（remote）直接通过<u><strong>pull拉取</strong></u>的方式到工作区（workspace）</p>
+<p>3、工作区（workspace）通过<u><strong>添加</strong></u>的方式到暂存区（index），再通过<u><strong>提交</strong></u>（commit)的方式到仓库区（repository），仓库区（repository）再通过<u><strong>推送</strong></u>（push）的方式到远程（remote）</p>
+<h2 id="如何从本地推送文件到远端："><a href="#如何从本地推送文件到远端：" class="headerlink" title="如何从本地推送文件到远端："></a>如何从本地推送文件到远端：</h2><p>1、需要创建一个文件夹，可以<strong>右键直接新建</strong>，也可以通过<strong>git bash</strong>或者 分别输入以下操作 例如建立TEST </p>
+<p><img src="/2022/01/10/Git%20/wps2.jpg" alt="img"> </p>
+<p>2、通过命令<strong>git init</strong> 把文件夹变成git可管理的仓库</p>
+<p>  <img src="/2022/01/10/Git%20/wps3.jpg" alt="img"></p>
+<p>3、在TEST里添加文件，不要.git里添加</p>
+<p><img src="/2022/01/10/Git%20/wps4.jpg" alt="img"> </p>
+<p>4、用git status查看状态</p>
+<p>  <img src="/2022/01/10/Git%20/wps5.jpg" alt="img"></p>
+<p>5、通过git .add .把项目添加到仓库上</p>
+<p>  <img src="/2022/01/10/Git%20/wps6.jpg" alt="img"></p>
+<p>6、用git commit -m‘first commit’ 提交到仓库</p>
+<p>  <img src="/2022/01/10/Git%20/wps7.jpg" alt="img"></p>
+<p>7、通过 git remote add origin+远程库地址来关联远程库</p>
+<p>  <img src="/2022/01/10/Git%20/wps8.jpg" alt="img"></p>
+<p>8、若远程库不为空，则必须通过git pull –rebase origin master获取远程库与本地库合并</p>
+<p>9、用git push上传项目</p>
+<p><img src="/2022/01/10/Git%20/wps9.jpg" alt="img"> </p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>git pull –rebase 表示把你的本地当前分支里的每个提交(commit)取消掉并且把它们临时保存为补丁(patch)**（这些补丁放到”.git/rebase”目录中)**，然后把本地当前分支更新为最新的”origin”分支，最后把保存的这些补丁应用到本地当前分支上。</p>
+<h2 id="读取他人项目操作："><a href="#读取他人项目操作：" class="headerlink" title="读取他人项目操作："></a>读取他人项目操作：</h2><p>1、在搜索框搜索他人仓库（对方名字/仓库名）</p>
+<p>2、 点击进入</p>
+<p>3、点击fork，就可以把他人仓库拷贝到本地</p>
+<p><img src="/2022/01/10/Git%20/wps10.jpg" alt="img"> </p>
+<p>4、 用笔可对文件进行修改，直接在空白处修改，则你的本地项目有变化，但他人的项目还是没有变化</p>
+<p><img src="/2022/01/10/Git%20/wps11.jpg" alt="img"> </p>
+<h2 id="如何让你改变项目之后也保存在他人的项目中："><a href="#如何让你改变项目之后也保存在他人的项目中：" class="headerlink" title="如何让你改变项目之后也保存在他人的项目中："></a>如何让你改变项目之后也保存在他人的项目中：</h2><p>1、 点击pull request</p>
+<p><img src="/2022/01/10/Git%20/wps12.jpg" alt="img"> </p>
+<p>2、 再点击New pull requests</p>
+<p><img src="/2022/01/10/Git%20/wps13.jpg" alt="img"> </p>
+<p>3、 系统会自动把两个文件进行比对，再点击create pull request ，空白处为说明信息，可写可不写，再点击create pull request，要是他人同意了，则他人可以合并起来.他人收到消息后，可以在pull request点开后直接进去查看修改的内容，若是要合并，则点击Merge pull request，再点击confirm merge</p>
+<h2 id="检查修改的文件：（文件放进去都要提交）"><a href="#检查修改的文件：（文件放进去都要提交）" class="headerlink" title="检查修改的文件：（文件放进去都要提交）"></a>检查修改的文件：（文件放进去都要提交）</h2><p>1、我们在文件夹里把要提交的文件修改之后，bash会显示我们修改了文件，</p>
+<p><img src="/2022/01/10/Git%20/wps14.jpg" alt="img">但不显示修改的内容（我们将源文件的20改成80)   </p>
+<p>2、用git diff+文件名 查看内容</p>
+<p>  <img src="/2022/01/10/Git%20/wps15.jpg" alt="img"></p>
+<p>3、知道改了哪里之后若想提交，先add，再用git status再查看一下状态 ，确定无误再commit到仓库里</p>
+<p>   <img src="/2022/01/10/Git%20/wps16.jpg" alt="img"></p>
+<h2 id="版本回退："><a href="#版本回退：" class="headerlink" title="版本回退："></a>版本回退：</h2><p> 1、修改文件后，继续对文件进行修改，修改了三次，要想查看记录， 使用   git log查看 显示三次</p>
+<p><img src="/2022/01/10/Git%20/wps17.jpg" alt="img"> </p>
+<p>2、把当前版本回退到上一版本，用git reset –hard HEAD<del>数字 ，例如回退到上一版本则为git reset –hard HEAD</del>1，先查看内容则用 cat+文件名 查看</p>
+<p><img src="/2022/01/10/Git%20/wps18.png" alt="img"> </p>
+<p>3、又想回退到最新版本，通过git reflog 找到版本号，再通过使用git reset –hard 版本号 找回</p>
+<p><img src="/2022/01/10/Git%20/wps19.jpg" alt="img"> </p>
+<p><img src="/2022/01/10/Git%20/wps20.jpg" alt="img"> </p>
+<p>4、可通过cat+文件名查看是否已恢复</p>
+<p>![img](Git .assets/wps21.jpg) </p>
+<h2 id="删除本地仓库："><a href="#删除本地仓库：" class="headerlink" title="删除本地仓库："></a>删除本地仓库：</h2><p>1、进入项目所在目录</p>
+<p><img src="/2022/01/10/Git%20/wps22.jpg" alt="img"> </p>
+<p>2、显示所有本地分支（初始化只有一个master分支）</p>
+<p><img src="/2022/01/10/Git%20/wps23.jpg" alt="img"> </p>
+<p>3、初始化本地版仓库（重新初始化一次，可以忽略）</p>
+<p><img src="/2022/01/10/Git%20/wps24.jpg" alt="img"> </p>
+<p>4、找到目录下隐藏的 .git</p>
+<p><img src="/2022/01/10/Git%20/wps25.jpg" alt="img"> </p>
+<p>5、删除 .git</p>
+<p><img src="/2022/01/10/Git%20/wps26.jpg" alt="img"> </p>
+<p> 6、查看是否删除</p>
+<p><img src="/2022/01/10/Git%20/wps27.jpg" alt="img"> </p>
+<h2 id="工作区和暂存区的区别："><a href="#工作区和暂存区的区别：" class="headerlink" title="工作区和暂存区的区别："></a>工作区和暂存区的区别：</h2><p>工作区：就是你在电脑上看到的目录，比如目录下funny里的文件(.git隐藏目录版本库除外)。或者以后需要再新建的目录文件等等都属于工作区范畴。</p>
+<p>版本库(Repository)/仓库：工作区有一个隐藏目录.git,这个不属于工作区，这</p>
+<p>版本库。其中版本库里面存了很多东西，其中最重要的就是stage(暂存区)，还有Git为我们自动创建了第一个分支master,以及指向master的一个指针HEAD。</p>
+<p><strong>Git提交文件到版本库有两步：</strong></p>
+<p><strong>第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。</strong></p>
+<p><strong>第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。</strong></p>
+<p><img src="/2022/01/10/Git%20/wps28.jpg" alt="img"></p>
+<h2 id="Git撤销修改："><a href="#Git撤销修改：" class="headerlink" title="Git撤销修改："></a>Git撤销修改：</h2><p>1 .发现添加的有误，想删除自己添加的东西（法一自己手动修改文件，法二用版本回退）</p>
+<p>2、在做撤销之前，可用git status先查看状态</p>
+<p><img src="/2022/01/10/Git%20/wps29.jpg" alt="img"> </p>
+<p>3、利用git checkout – 文件名撤销</p>
+<p><img src="/2022/01/10/Git%20/wps30.jpg" alt="img"> </p>
+<p>4、利用cat +文件名查看内容是否已撤销</p>
+<p>5、注意：文件添加后没法撤销</p>
+<h2 id="Git删除文件："><a href="#Git删除文件：" class="headerlink" title="Git删除文件："></a>Git删除文件：</h2><p>1、可直接在目录下删除文件或通过rm +文件名删除</p>
+<p><img src="/2022/01/10/Git%20/wps31.jpg" alt="img"> </p>
+<p>2、在没有提交之前，可用git checkout – 文件名恢复</p>
+<p><img src="/2022/01/10/Git%20/wps32.jpg" alt="img"> </p>
+<h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><p> git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
+<h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
+<h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#111;&#x75;&#x72;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#111;&#x75;&#x72;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#x6f;&#x6d;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p><img src="/2022/01/10/Git%20/wps33.jpg" alt="img"> </p>
+<p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
+<h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
+<p><img src="/2022/01/10/Git%20/wps34.jpg" alt="img"> </p>
+<p>点击 Add Key，你就应该可以看到已经添加的key。<br><img src="/2022/01/10/Git%20/wps35.jpg" alt="img"></p>
+<h3 id="如何添加远程库？"><a href="#如何添加远程库？" class="headerlink" title="如何添加远程库？"></a>如何添加远程库？</h3><p>现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创</p>
+<p>一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为</p>
+<p>备份，又可以其他人通过该仓库来协作。</p>
+<p>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
+<p><img src="/2022/01/10/Git%20/wps36.jpg" alt="img"> </p>
+<p>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
+<p><img src="/2022/01/10/Git%20/wps37.jpg" alt="img"> </p>
+<p>现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：</p>
+<p>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/tugenhua0707/testgit.git">https://github.com/tugenhua0707/testgit.git</a></p>
+<p>所有的如下：</p>
+<p><img src="/2022/01/10/Git%20/wps38.jpg" alt="img"> </p>
+<p>把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。</p>
+<p>由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：</p>
+<p><img src="/2022/01/10/Git%20/wps39.jpg" alt="img"> </p>
+<p>从现在起，只要本地作了提交，就可以通过如下命令：</p>
+<p>git push origin master</p>
+<p>把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+<h3 id="如何从远程库克隆？"><a href="#如何从远程库克隆？" class="headerlink" title="如何从远程库克隆？"></a>如何从远程库克隆？</h3><p>上面我们了解了先有本地库，后有远程库时候，如何关联远程库。</p>
+<p>现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？</p>
+<p>首先，登录github，创建一个新的仓库，名字叫testgit2.如下：</p>
+<p><img src="/2022/01/10/Git%20/wps40.jpg" alt="img"> </p>
+<p>如下，我们看到：</p>
+<p><img src="/2022/01/10/Git%20/wps41.jpg" alt="img"> </p>
+<p>现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：</p>
+<p><img src="/2022/01/10/Git%20/wps42.jpg" alt="img"> </p>
+<p>接着在我本地目录下 生成testgit2目录了，如下所示：</p>
+<p><img src="/2022/01/10/Git%20/wps43.jpg" alt="img"> </p>
+<h2 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h2><p>在 版本回填退里，你已经知道，每次提交，Git都把它们串成一条</p>
+<p>间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。</p>
+<p>1、 创建分支  git branch+文件名</p>
+<p>​    <img src="/2022/01/10/Git%20/wps44.jpg" alt="img"></p>
+<p>2、切换分支  git checkout+文件名</p>
+<p>​    <img src="/2022/01/10/Git%20/wps45.jpg" alt="img"></p>
+<p>3、也可直接创建+切换分支  git checkout -b +文件名</p>
+<p>​    <img src="/2022/01/10/Git%20/wps46.jpg" alt="img"></p>
+<p>4、在dev的分支做测试</p>
+<p>  先在dev分支上进行修改（改数字20）</p>
+<p><img src="/2022/01/10/Git%20/wps47.jpg" alt="img">  </p>
+<p><img src="/2022/01/10/Git%20/wps48.jpg" alt="img"> </p>
+<p> 切换分支，再查看内容</p>
+<p><img src="/2022/01/10/Git%20/wps49.jpg" alt="img"> </p>
+<p>Master分支上没有显示修改后的内容，因为对其的修改是在dev分支上</p>
+<p>5、 我们可以把dev分支合并到master分支  就可以在master分支上看修  </p>
+<p>改内容  git merge （当前分支以外分支的名字）  <img src="/2022/01/10/Git%20/wps50.jpg" alt="img"></p>
+<p>6、删除分支  git branch -d + 文件名</p>
+<p><img src="/2022/01/10/Git%20/wps51.jpg" alt="img"> </p>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>1、新建第二个分支</p>
+<p>  <img src="/2022/01/10/Git%20/wps52.jpg" alt="img"></p>
+<p><img src="/2022/01/10/Git%20/wps53.jpg" alt="img"> </p>
+<p>2、切换master分支</p>
+<p><img src="/2022/01/10/Git%20/wps54.jpg" alt="img"> </p>
+<p>3、在master上合并第一个分支</p>
+<p><img src="/2022/01/10/Git%20/wps55.jpg" alt="img"> </p>
+<p>4、再查看内容，会出现冲突代码</p>
+<p><img src="/2022/01/10/Git%20/wps56.jpg" alt="img"> </p>
+<p>通常合并分支时，<strong>git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式</strong></p>
+<p><img src="/2022/01/10/Git%20/wps57.jpg" alt="img"> </p>
+<p><img src="/2022/01/10/Git%20/wps58.jpg" alt="img"> </p>
+<h2 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h2><p>1、 在当前的分支未提交时，却要先修改bug，只能先创建一个分支来修复</p>
+<p>2、 这种情况可以先用stash功能“隐藏”当前分支<img src="/2022/01/10/Git%20/wps59.jpg" alt="img"></p>
+<p>3、接着在创建新分支修复bug，最后转化为master，再将两者合并，最后删除新分支</p>
+<p>4、再回到之前需要工作的分支，利用 git stash list恢复</p>
+<p><img src="/2022/01/10/Git%20/wps60.jpg" alt="img"> </p>
+<p>5、 想删除则用 git stash drop</p>
+<p><img src="/2022/01/10/Git%20/wps61.jpg" alt="img"> </p>
+<h2 id="删除提交记录"><a href="#删除提交记录" class="headerlink" title="删除提交记录"></a>删除提交记录</h2><p>1、git reset –hard HEAD~1</p>
+<p>2、git push –force</p>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><p>当从远程库克隆时，实际上git自动把本地的master分支和远程master、分支对应起来，远程库默认库名为origin</p>
+<p>1、 关联远程库   git remote add origin +地址  </p>
+<p>2、查看远程库信息  git  remote  </p>
+<p>3、 查看远程库详细信息  git remote -v</p>
+<p><img src="/2022/01/10/Git%20/wps62.jpg" alt="img"> </p>
+<p>注意：若远程库不为空，则必须通过git pull –rebase orign master获取远程库与本地库合并</p>
+<p><img src="/2022/01/10/Git%20/wps63.jpg" alt="img"> </p>
+<p><img src="/2022/01/10/Git%20/wps64.jpg" alt="img"> </p>
+<h2 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h2><p>git push origin master  （推送到主分支）</p>
+<p>git push origin +分支名  (推送到分支上）</p>
+<h2 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h2><p>多人协作时，大家都会往master分支上推送各自的修改。</p>
+<p>1、把分支dev推送到远程去</p>
+<p><img src="/2022/01/10/Git%20/wps65.jpg" alt="img"> </p>
+<p>2、克隆远程库到本地  git clone + 地址</p>
+<p><img src="/2022/01/10/Git%20/wps66.jpg" alt="img"> </p>
+<p>3、目录生成</p>
+<p><img src="/2022/01/10/Git%20/wps67.jpg" alt="img"> </p>
+<p>现在我们的小伙伴要在dev分支上做开发，就必须把远程的origin的dev分支到本地来，</p>
+<p>4、使用命令创建本地dev分支：git checkout –b dev origin/dev，现在小伙伴们就可以在dev分支上做开发了，开发完成后把dev分支推送到远程库时。</p>
+<p><img src="/2022/01/10/Git%20/wps68.jpg" alt="img"> </p>
+<p>小伙伴们已经向origin/dev分支上推送了提交，而我在我的目录文件下也对同样的文件同个地方作了修改</p>
+<p>5、推送到远程</p>
+<p><img src="/2022/01/10/Git%20/wps69.jpg" alt="img"> </p>
+<p>显示推送失败，因为我的小伙伴最新提交的和我试图推送的有冲突</p>
+<p><strong>解决方案</strong></p>
+<p>1、 先用git pull把最新的提交从origin/dev抓下来</p>
+<p><img src="/2022/01/10/Git%20/image-20210115111944680.png" alt="image-20210115111944680"></p>
+<p>2、 git pull也失败了，则指定本地dev分支与远程origin/dev分支的链接</p>
+<p><img src="/2022/01/10/Git%20/wps71.jpg" alt="img"> </p>
+<p>手动解决在提交</p>
+<p>3、再用  git push origin + 名称 进行推送</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-事件处理模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/10/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F/" class="article-date">
+  	<time datetime="2022-01-10T07:50:14.805Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件处理模式"><a href="#事件处理模式" class="headerlink" title="事件处理模式"></a>事件处理模式</h1><h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><p>　　事件是用户在界面上的一个操作（通常使用各种输入设备，如：鼠标、键盘等来完成）。 </p>
+<p>　　当一个事件发生时，该事件用<strong>一个事件对象来表示。事件对象有对应的事件类。</strong>不同的事件类描述不同类型的用户动作。<strong>事件类包含在java.awt.event和javax.swing.event包中。</strong></p>
+<h2 id="2-事件源"><a href="#2-事件源" class="headerlink" title="2.事件源"></a>2.事件源</h2><p>　　<strong>产生事件的组件叫事件源。</strong>在一个按钮上单击鼠标时，该按钮就是事件源，会产生一个ActionEvent类型的事件。</p>
+<h2 id="3-事件处理器（事件处理方法）"><a href="#3-事件处理器（事件处理方法）" class="headerlink" title="3.事件处理器（事件处理方法）"></a>3.事件处理器（事件处理方法）</h2><p>　　事件处理器是一个<strong>接收事件对象并进行相应处理的方法。</strong>事件处理器包含在一个类中，这个类的对象负责检查事件是否发生，<strong>若发生就激活事件处理器进行处理。</strong></p>
+<h2 id="4-事件监听器类"><a href="#4-事件监听器类" class="headerlink" title="4.事件监听器类"></a>4.事件监听器类</h2><p>　　<strong>包含事件处理器，并负责检查事件是否发生，若发生就激活事件处理器进行处理的类叫做事件监听器类。</strong>其实例就是事件监听器对象。事件监听器类必须实现事件监听器接口或继承事件监听器适配器类。</p>
+<p>　　事件监听器接口定义了处理事件必须实现的方法。事件监听器适配器类是对事件监听器接口的简单实现。目的是为了减少编程的工作量。</p>
+<p>　　事件监听器接口和事件监听器适配器类也都包含在java.awt.event和javax.swing.event包中。</p>
+<h2 id="5-注册事件监听器"><a href="#5-注册事件监听器" class="headerlink" title="5.注册事件监听器"></a>5.注册事件监听器</h2><p>　　为了能够让事件监听器检查某个组件（事件源）是否发生了某些事件，并且在发生时激活事件处理器进行相应的处理，<strong>必须在事件源上注册事件监听器。</strong>这是通过使用事件源组件的以下方法来完成的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addXxxListener（事件监听器对象）</span><br><span class="line">Xxx对应相应的事件类。</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/01/10/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.png"></p>
+<h2 id="重点！！！"><a href="#重点！！！" class="headerlink" title="重点！！！"></a>重点！！！</h2><p>**思路：创建一个该监视器对象的类–&gt;声明ActionListener接口–&gt;重写actionPerformed方法–&gt;再创建一个[任意命名]类从而创建监视器–&gt;通过addActionListener有监视器的类（监视器）服务于的对象 **</p>
+<p>编写一个监听器类，该监听器类实现了XXXListener接口，（假定监听器类的类名为MyXXXListener)；</p>
+<p>在MyXXXListener中的相应事件处理方法中编写事件处理代码（事件处理器）。</p>
+<p>调用GUI组件c的addXXXListener()方法注册事件监听器对象。 c.addXXXListener(new MyXXXListener());</p>
+<p>要处理C上的多种事件，可以编写多个相应的监听器类，进行多次注册。也可以编写一个实现了多个监听器接口的类，进行一次注册。</p>
+<h1 id="事件、事件监听器接口、事件监听器类"><a href="#事件、事件监听器接口、事件监听器类" class="headerlink" title="事件、事件监听器接口、事件监听器类:"></a>事件、事件监听器接口、事件监听器类:</h1><p><strong>每一类事件有一个相应的事件监听器接口，该接口定义了接收和处理事件的抽象方法。实现该接口的类，就是监听器类。</strong>其对象可</p>
+<p>作为监听器对象向相应的组件注册。 </p>
+<p>事件的类名通常为：XxxEvent </p>
+<p>对应的事件监听器接口名通常为：XxxListener</p>
+<p>一个监听器接口定义了一种以上的抽象事件处理方法（事件处理</p>
+<p>器）。</p>
+<p>事件监听器类实现事件监听器接口，其类名可以由我们自己取。事</p>
+<p>件监听器类需要我们自己编写。</p>
+<p>一个组件可以注册一个或多个监听器对象，事件对象只向已注册的</p>
+<p>监听器对象报告事件的发生。</p>
+<h2 id="1、事件监听器类的编写要点"><a href="#1、事件监听器类的编写要点" class="headerlink" title="1、事件监听器类的编写要点"></a>1、事件监听器类的编写要点</h2><p>事件监听器类应该包括以下两部分内容：</p>
+<p>(1)在事件监听器类的声明中指定要实现的监听器接口名，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyListener</span> <span class="keyword">implements</span> <span class="title">XxxListener</span> </span>&#123; </span><br><span class="line">　… &#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)实现监听器接口中的事件处理方法，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 事件处理方法名(XxxEvent e) &#123; </span><br><span class="line">　　...<span class="comment">//处理某个事件的代码... &#125; </span></span><br></pre></td></tr></table></figure>
+
+<p>然后，在一个或多个组件上可以进行监听器类的实例的注册。如：组件对象.addXxxListener(MyListener对象); </p>
+<h2 id="2、java-awt-event-包中最常用的语义事件类："><a href="#2、java-awt-event-包中最常用的语义事件类：" class="headerlink" title="2、java.awt.event 包中最常用的语义事件类："></a>2、java.awt.event 包中最常用的语义事件类：</h2><p> •ActionEvent (对应按钮点击、 菜单选择、选择列表项或在文本框中 ENTER); </p>
+<p> •AdjustmentEvent (用户调节滚动条)；</p>
+<p> •ItemEvem (用户从复选框或列表框中选择一项）。</p>
+<h2 id="3、常用的-5-个底层事件类是："><a href="#3、常用的-5-个底层事件类是：" class="headerlink" title="3、常用的 5 个底层事件类是："></a>3、常用的 5 个底层事件类是：</h2><p> •KeyEvent (一个键被按下或释放)；</p>
+<p> •MouseEvent (鼠标键被按下、 释放、 移动或拖动)；</p>
+<p> •MouseWheelEvent (鼠标滚轮被转动)；</p>
+<p> •FocusEvent (某个组件获得焦点或失去焦点)；</p>
+<p> •WindowEvent ( 窗口状态被改变）</p>
+<p>所有的Listener接口都继承于EventListener,位于java.util包中。</p>
+<h2 id="4、AWT事件接口及处理方法（java-awt-event包）"><a href="#4、AWT事件接口及处理方法（java-awt-event包）" class="headerlink" title="4、AWT事件接口及处理方法（java.awt.event包）"></a>4、AWT事件接口及处理方法（java.awt.event包）</h2><table>
 <thead>
 <tr>
-<th>Id</th>
-<th>Name</th>
-<th>Sex</th>
-<th>Boyfried-id</th>
-<th>Boyname</th>
-<th>Usercp</th>
+<th>接口</th>
+<th>方法</th>
+<th>事件源</th>
+<th>参数/访问方法</th>
+<th>描述信息</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td>
-<td>柳岩</td>
-<td>女</td>
-<td>6</td>
-<td>黄晓明</td>
-<td>100</td>
+<td>ActionListener</td>
+<td>actionPerformed</td>
+<td>AbstractButton JComboBox   JTextFieldTimer</td>
+<td>ActionEvent/getActionCommand、getModifiers</td>
+<td>单击按钮、单击菜单项文本框内按回车等动作</td>
 </tr>
 <tr>
-<td>2</td>
-<td>热巴</td>
-<td>女</td>
-<td>2</td>
-<td>鹿晗</td>
-<td>800</td>
+<td>AdjustmentListener</td>
+<td>adjustmentValueChanged</td>
+<td>JScrollbar</td>
+<td>AdjustmentEvent/getAdjustable、getAdjustmentType、getValue</td>
+<td>移动了滚动条等组件</td>
 </tr>
 <tr>
-<td>3</td>
-<td>周芷若</td>
-<td>女</td>
-<td>3</td>
-<td>张无忌</td>
-<td>30</td>
+<td>ItemListener</td>
+<td>itemStateChanged</td>
+<td>AbstractButtonJ、ComboBox</td>
+<td>ItemEvent/getltem、getltemSelectable、getStateChange</td>
+<td>选择了可选项的内容</td>
 </tr>
 <tr>
-<td>4</td>
-<td>周冬雨</td>
-<td>女</td>
-<td>7</td>
-<td></td>
-<td></td>
+<td>FocusListener</td>
+<td>focusGained  focusLost</td>
+<td>Component</td>
+<td>FocusEvent\sTemporary</td>
+<td>组件得到或失去焦点</td>
 </tr>
 <tr>
-<td>5</td>
-<td>杨颖</td>
-<td>女</td>
-<td>1</td>
-<td></td>
-<td></td>
+<td>KeyListener</td>
+<td>keyPressed、keyReleased、keyTyped</td>
+<td>Component</td>
+<td>KeyEvent/getKeyChar、getKeyCode、getKeyModifiersText、getKeyTex、isActionKey</td>
+<td>键盘输入</td>
+</tr>
+<tr>
+<td>MouseListener</td>
+<td>mousePressed、mouseReleased 、mouseEntered 、  mouseExited  、mouseClicked</td>
+<td>Component</td>
+<td>MouseEvent/getClickCount、getX、getY、translatePoint、getPoint</td>
+<td>鼠标点击等</td>
+</tr>
+<tr>
+<td>MouseMotionListener</td>
+<td>mouseDragged、mouseMoved</td>
+<td>Component</td>
+<td>MouseEven</td>
+<td>鼠标移动</td>
+</tr>
+<tr>
+<td>MouseWheelListener</td>
+<td>mouseWheelMoved</td>
+<td>Component</td>
+<td>MouseWheelEvent/getWheelRotation、getScrollAmount</td>
+<td>鼠标滚轮被转动</td>
+</tr>
+<tr>
+<td>WindowListener</td>
+<td>windowClosing、windowOpened、windowlconified、windowDeiconified、windowClosed、windowActivated、windowDeactivated</td>
+<td>Window</td>
+<td>WindowEvent/getWindow</td>
+<td>窗口事件</td>
+</tr>
+<tr>
+<td>WindowFocusListener</td>
+<td>windowGainedFocus 、windowLostFocus</td>
+<td>Window</td>
+<td>WindowEvent/getOppositeWindow</td>
+<td>窗体得到或失去焦点</td>
+</tr>
+<tr>
+<td>WindowStateListener</td>
+<td>windowStateChanged</td>
+<td>Window</td>
+<td>WindowEvent/getOldState、getNewState</td>
+<td>窗体状态</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>getDocument</td>
+<td>/</td>
+<td>DocumentEvent/changedUpdata(DocumentEvent e)、RemoveUpdata(DocumentEvent e)、insertUpdata(DocumentEvent e)</td>
+<td>文本区所维护的文档</td>
 </tr>
 </tbody></table>
-<p>查询女神名和对应的男神名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> name,boyfriend <span class="keyword">from</span> boys,beauty <span class="keyword">where</span> beauty.boyfriend_id <span class="operator">=</span>boys.id; </span><br></pre></td></tr></table></figure>
-
-<p>查询员工名和对应的部门名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,department_name <span class="keyword">from</span> employee,departments <span class="keyword">where</span>  Employee.department_id <span class="operator">=</span> department.department_id</span><br></pre></td></tr></table></figure>
-
-<p>查询员工名、工种号、工种名 起别名提高简洁读</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,Employee.job_id，job_title <span class="keyword">from</span> employee e,jobs  J <span class="keyword">where</span> e.job_id <span class="operator">=</span> j.Job_id</span><br></pre></td></tr></table></figure>
-
-<p><strong>PS：两个表顺序可以呼唤</strong></p>
-<p>运行代码都是先执行from 在执行select，若使用了别名，则用别名</p>
-<p>查询有奖金的员工名、部门名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,department_name <span class="keyword">from</span> employee e,departments d <span class="keyword">where</span> e.department_id <span class="operator">=</span> d.department_id <span class="keyword">and</span> e.commission <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<p>查询城市名字第二个字符为o对应的城市名和部门名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> department_name，city <span class="keyword">from</span> departments d ，location l <span class="keyword">where</span> d.location_id <span class="operator">=</span> l.location_id <span class="keyword">and</span> city <span class="keyword">like</span> ‘_o<span class="operator">%</span>’</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>查询每个城市的部门个数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> count（<span class="operator">*</span>），city <span class="keyword">from</span> departments d ，location l <span class="keyword">where</span> d.location id <span class="operator">=</span>l.location id <span class="keyword">group</span> <span class="keyword">by</span> city</span><br></pre></td></tr></table></figure>
-
-<p>查询有奖金的部门名和领导编号和该部门的最低工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> department_name，manager_id ，<span class="built_in">min</span>(salary) <span class="keyword">from</span> departments d ，employee e <span class="keyword">where</span> d.department_id <span class="operator">=</span> e.department_id <span class="keyword">and</span> commission_pct <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">group</span> <span class="keyword">by</span> department_name,d.manager_id</span><br></pre></td></tr></table></figure>
-
-<p>查询每个工种的工种名和员工个数，并且按员工个数降序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> job_title,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> employee e,jobs j <span class="keyword">where</span> e.job_id <span class="operator">=</span> j.job_id <span class="keyword">group</span> <span class="keyword">by</span> job_title <span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-
-<p>查询员工名、部门名和所在的城市有s的字符</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,department_name ，city <span class="keyword">from</span> employee e,departments d，location l <span class="keyword">where</span> e.department_id <span class="operator">=</span> d.department_id <span class="keyword">and</span> d.location_id <span class="operator">=</span> l.location_id <span class="keyword">and</span> city <span class="keyword">like</span> ‘s<span class="operator">%</span>’</span><br></pre></td></tr></table></figure>
-
-<h6 id="2、非等值连接-数值不是等于，而是在两个数之间"><a href="#2、非等值连接-数值不是等于，而是在两个数之间" class="headerlink" title="2、非等值连接 数值不是等于，而是在两个数之间"></a>2、非等值连接 数值不是等于，而是在两个数之间</h6><p>查询员工工资和工资级别</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> salary,grade_level <span class="keyword">from</span> employee e,job_grades g <span class="keyword">where</span> salary <span class="keyword">between</span> g.lowest_sal <span class="keyword">and</span> g.highest_sal</span><br></pre></td></tr></table></figure>
-
-<h6 id="3、自连接-自己连接自己"><a href="#3、自连接-自己连接自己" class="headerlink" title="3、自连接  自己连接自己"></a>3、自连接  自己连接自己</h6><p>查询员工名和上级的名字</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> e.last_name,e.employee_id m.last_name,m.employee_id <span class="keyword">from</span> employeee e,employees m <span class="keyword">where</span> e.employee_id<span class="operator">=</span>m.employee_id</span><br></pre></td></tr></table></figure>
-
-<h6 id="二、sql199语法"><a href="#二、sql199语法" class="headerlink" title="二、sql199语法"></a>二、sql199语法</h6><p>语法 : select 查询列表 </p>
-<p>from 列表1 别名 【连接类型】join 列表2 别名 on 连接条件【where 筛选条件】【group by 分组】【having 筛选条件】【order by 排序列表】</p>
-<p>分类:内连接:——inner</p>
-<p>外连接：左外——left 【outer】</p>
-<pre><code>           右外——right【outer】
-</code></pre>
-<p>​               全外——full【outer】</p>
-<p>交叉连接：cross</p>
-<h6 id="1、内连接-（查询交集部分）"><a href="#1、内连接-（查询交集部分）" class="headerlink" title="1、内连接 （查询交集部分）"></a>1、内连接 （查询交集部分）</h6><p>语法：select 查询列表 </p>
-<p>from 列表1 别名 inner join 列表2 别名 on 连接条件</p>
-<p>分类：等值连接、非等值连接、自连接</p>
-<p>特点：添加排序、筛选、分组 </p>
-<p>​            Inner可以省略</p>
-<p>筛选条件放where后面，连接条件放on后面，提高分离性，便于     阅读</p>
-<h6 id="2、等值连接"><a href="#2、等值连接" class="headerlink" title="2、等值连接"></a>2、等值连接</h6><p> 查询员工名、部门名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,department_name <span class="keyword">from</span> employee e <span class="keyword">inner</span> <span class="keyword">join</span> departments d <span class="keyword">on</span> e.department_id <span class="operator">=</span> d.department_id </span><br></pre></td></tr></table></figure>
-
-<p> 查询名字中包含e的员工名和工种名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name,join_title <span class="keyword">from</span> employee e <span class="keyword">inner</span> <span class="keyword">join</span> jobs j <span class="keyword">on</span> e.job_id <span class="operator">=</span> j.job_id <span class="keyword">where</span> e.last_name <span class="keyword">like</span> “<span class="operator">%</span>e<span class="operator">%</span>”</span><br></pre></td></tr></table></figure>
-
-<p>查询部门个数&gt;3的城市名和部门个数（添加分组和筛选）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> city,<span class="built_in">count</span>(<span class="operator">*</span>)部门个数 <span class="keyword">from</span> departments d <span class="keyword">inner</span> <span class="keyword">join</span> elocation l <span class="keyword">on</span> d.location_id <span class="operator">=</span> l.location_id <span class="keyword">group</span> <span class="keyword">by</span> city <span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">3</span></span><br></pre></td></tr></table></figure>
-
-<p> 查询哪个部门的员工个数&gt;3的部门名和员工个数，并按个数降序（添加排序）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="built_in">count</span>(<span class="operator">*</span>)部门个数 ，departments_id <span class="keyword">from</span> employee <span class="keyword">inner</span> <span class="keyword">join</span> departments d <span class="keyword">on</span> e.department_id <span class="operator">=</span> d.department_id <span class="keyword">group</span> <span class="keyword">by</span> departments_name <span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">3</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-
-<p>查询员工名、部门名、工种名、并按部门名降序（）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> last_name，departments_name，job_title <span class="keyword">from</span> employee e <span class="keyword">inner</span> <span class="keyword">join</span> departments d <span class="keyword">on</span> e.department_id <span class="operator">=</span> d.department_id <span class="keyword">inner</span> <span class="keyword">join</span> jobs j <span class="keyword">on</span> e.jobs_id <span class="operator">=</span> j.jobs_id <span class="keyword">order</span> <span class="keyword">by</span> departments_name <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="3、外连接（用于查询一个表中，另一个表没有的记录）"><a href="#3、外连接（用于查询一个表中，另一个表没有的记录）" class="headerlink" title="3、外连接（用于查询一个表中，另一个表没有的记录）"></a>3、外连接（用于查询一个表中，另一个表没有的记录）</h6><p>特点：1、如果从表中有和他匹配的，则显示匹配的值</p>
-<p>​                 如果从表中没有和他匹配的，则显示null</p>
-<p>​                 外连接查询结果=内连接结果+主表中有而从表没有的</p>
-<p>2、左外连接：left join 左边的是主表</p>
-<p>​     右外连接：right join右边的是主表</p>
-<p>3、左外和右外交换两个表的顺序，可以实现同样的效果如果 </p>
-<p>用beauty匹配boys表，则beauty表为主体表，boys为从表，主表不变，从表填充 </p>
-<p>4、全外连接=内连接结果+表1中有但表2中没有的+表2中有但表1中没有的</p>
-<p>查询男朋友不在男神表的女神名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">左外：<span class="keyword">select</span> b.name <span class="keyword">from</span> beauty b <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> boys bo <span class="keyword">on</span> b.’noyfriend_id’<span class="operator">=</span>bo.’id’ <span class="keyword">where</span> bo.’id’ <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<p>查询哪个部门没有员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#左外</span><br><span class="line"><span class="keyword">select</span> d.<span class="operator">*</span>,e.employee_id <span class="keyword">from</span> department d <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> employees e <span class="keyword">on</span> d.’department_id’<span class="operator">=</span>e.’department_id’ <span class="keyword">where</span> e.’employee_id’ <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line">#右外</span><br><span class="line"><span class="keyword">select</span> d.<span class="operator">*</span>,e.employee_id <span class="keyword">from</span> employees e <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> employees e <span class="keyword">on</span> d.’department_id’<span class="operator">=</span>e.’department_id’ <span class="keyword">where</span> e.’employee_id’ <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="4、全外连接（交集-两个表）"><a href="#4、全外连接（交集-两个表）" class="headerlink" title="4、全外连接（交集+两个表）"></a>4、全外连接（交集+两个表）</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bo.<span class="operator">*</span>,b.<span class="operator">*</span> <span class="keyword">from</span> beauty b <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> boys.bo <span class="keyword">on</span> b.’boyfriend_id’<span class="operator">=</span>bo.id’ </span><br></pre></td></tr></table></figure>
-
-<h6 id="5、交叉连接-乘积连接）"><a href="#5、交叉连接-乘积连接）" class="headerlink" title="5、交叉连接(乘积连接）"></a>5、交叉连接(乘积连接）</h6><p>select bo.<em>,b.</em> from beauty b full cross join boys bo </p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9310.png" alt="image-20220109204241236"></p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9311.png" alt="image-20220109204250462"></p>
-<h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><p>含义：出现在其他语句中的select语句，称为子查询或内查询</p>
-<p>外部的查询称为主查询或外查询</p>
-<p>分类：按子查询出现的位置——select 后面：仅仅支持标量子查询</p>
-<p>​           from后面：支持表子查询</p>
-<p>​           where或having后面：标量子查询、列子查询、行子查询</p>
-<p>​           exists后面–相关子查询：表子查询</p>
-<p>按结果集行列数不同——标量子查询（结果集只有一行一列）</p>
-<p>​                                          列子查询（结果集只有一列多行）</p>
-<p>​                                          行子查询（结果集只有一行多列）</p>
-<p>​                                          表子查询（结果集一般为多行多列）</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9312.png" alt="image-20220109204757647"></p>
-<h6 id="一、where或having后面"><a href="#一、where或having后面" class="headerlink" title="一、where或having后面"></a>一、where或having后面</h6><p>标量子查询（单行子查询）、列子查询（多行子查询）、行子查询（多列多行）</p>
-<p>特点：1、子查询放在小括号内</p>
-<p>​            2、子查询放在条件右侧</p>
-<p>​            3、 标量子查询：一般搭配单行操作符使用&lt; 、&gt; 、&lt;=、 &gt;=、          =、&lt;&gt;不等于； 列子查询：一般搭配多行操作符使用in、and/some、all</p>
-<p>​           4、子查询的执行优先于主查迅执行，主查迅的条件用到了子查询   的结果 </p>
-<h6 id="1、标量子查询"><a href="#1、标量子查询" class="headerlink" title="1、标量子查询"></a>1、标量子查询</h6><p>查询谁的工资比Abel高</p>
-<p>（1）查询Abel工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">where</span> last_name <span class="operator">=</span> ‘Abel’</span><br></pre></td></tr></table></figure>
-
-<p>（2）查询员工工资，满足salsry&gt;上述结果</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> employee <span class="keyword">where</span> salsry<span class="operator">&gt;</span>（ <span class="keyword">select</span> salary <span class="keyword">from</span> Employee <span class="keyword">where</span> last_name <span class="operator">=</span> ‘Abel’）；</span><br></pre></td></tr></table></figure>
-
-<p>返回job_id与141号员工相同，salary比143号员工多的员的姓名、</p>
-<p>job_id和工资  </p>
-<p>（1）查询143号员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">where</span> job_id <span class="operator">=</span><span class="number">143</span>;</span><br></pre></td></tr></table></figure>
-
-<p>（2）job_id与141号员工相同,salary比143号员工多的员工的姓名、job_id和工资  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> last_name、job_id、salary <span class="keyword">from</span> employee <span class="keyword">where</span> salsry<span class="operator">&gt;</span>(<span class="keyword">select</span> last_name <span class="keyword">from</span> employee <span class="keyword">where</span> employee_id <span class="operator">=</span><span class="number">143</span>) <span class="operator">&amp;&amp;</span> job_id <span class="operator">=</span> <span class="number">141</span>;</span><br></pre></td></tr></table></figure>
-
-<p>返回公司工资最少的员工名字、job_id和salary</p>
-<p>（1）查询工资最低工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salary） <span class="keyword">from</span> employee ;</span><br></pre></td></tr></table></figure>
-
-<p>（2）查询员工名字、job_id和salary </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> last_name,job_id,salsry <span class="keyword">from</span> employee <span class="keyword">where</span> salary<span class="operator">=</span>( <span class="keyword">select</span> min（salary） <span class="keyword">from</span> employee );</span><br></pre></td></tr></table></figure>
-
-<p>查询最低工资大于50号部门最低工资的部门id和其最低工资</p>
-<p> （1）50号部门最低工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salary）<span class="keyword">from</span> employee <span class="keyword">where</span> department_id <span class="operator">=</span><span class="number">50</span>;</span><br></pre></td></tr></table></figure>
-
-<p>（2）查询每个部门的最低工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salary），department_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> department_id;</span><br></pre></td></tr></table></figure>
-
-<p>（3）查询满足最低工资大于50号部门</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> min（salary），department_id <span class="keyword">from</span> employee <span class="keyword">group</span> <span class="keyword">by</span> department_id <span class="keyword">having</span> min（salary）<span class="operator">&gt;</span>(<span class="keyword">select</span> min（salary）<span class="keyword">from</span> employee <span class="keyword">where</span> department_id <span class="operator">=</span><span class="number">50</span>);</span><br></pre></td></tr></table></figure>
-
-<h6 id="2、列子查询（多行子查询）"><a href="#2、列子查询（多行子查询）" class="headerlink" title="2、列子查询（多行子查询）"></a>2、列子查询（多行子查询）</h6><p>操作符：in/not in 等于列表中的任意一个   指一个数列</p>
-<p>​               Any/some 和子查询返回某一个值比较</p>
-<p>​               All 和子查询返回的所有值比较</p>
 
       
     </div>
