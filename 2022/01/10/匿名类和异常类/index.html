@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="匿名类Java 中可以实现一个类中包含另外一个类，且不需要提供任何的类名直接实例化。 主要是用于在我们需要的时候创建一个对象来执行特定的任务，可以使代码更加简洁。 匿名类是不能有名字的类，它们不能被引用，只能在创建时用 new 语句来声明它们。 匿名类语法格式：   创建了一个匿名类对象 object1，匿名类是表达式形式定义的，所以末尾以分号来结束。匿名类通常继承一个父类或实现一个接口。 异常类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="匿名类Java 中可以实现一个类中包含另外一个类，且不需要提供任何的类名直接实例化。 主要是用于在我们需要的时候创建一个对象来执行特定的任务，可以使代码更加简洁。 匿名类是不能有名字的类，它们不能被引用，只能在创建时用 new 语句来声明它们。 匿名类语法格式：   创建了一个匿名类对象 object1，匿名类是表达式形式定义的，所以末尾以分号来结束。匿名类通常继承一个父类或实现一个接口。 异常类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/wps1.jpg">
+<meta property="og:image" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/2.png">
+<meta property="og:image" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/wps2.jpg">
+<meta property="og:image" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/3.png">
+<meta property="article:published_time" content="2022-01-10T14:12:27.118Z">
+<meta property="article:modified_time" content="2022-01-10T14:16:53.701Z">
+<meta property="article:author" content="Yuu Xii">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/wps1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/2.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Yuu Xii</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="[object Object]" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-匿名类和异常类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/" class="article-date">
+  	<time datetime="2022-01-10T14:12:27.118Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="匿名类"><a href="#匿名类" class="headerlink" title="匿名类"></a>匿名类</h1><p>Java 中<strong>可以实现一个类中包含另外一个类，且不需要提供任何的类名直接实例化。</strong></p>
+<p>主要是用于在我们需要的时候创建一个对象来执行特定的任务，可以使代码<strong>更加简洁</strong>。</p>
+<p>匿名类是不能有名字的类，它们不能被引用，只能在创建时用 new 语句来声明它们。</p>
+<p>匿名类语法格式：</p>
+<p><img src="/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/wps1.jpg" alt="img"> </p>
+<p>创建了一个匿名类对象 object1，匿名类是表达式形式定义的，所以末尾以<strong>分号来结束</strong>。匿名类通常继承一个父类或实现一个接口。</p>
+<h1 id="异常类"><a href="#异常类" class="headerlink" title="异常类"></a>异常类</h1><h2 id="一、什么是异常："><a href="#一、什么是异常：" class="headerlink" title="一、什么是异常："></a>一、什么是异常：</h2><p>异常就是在运行时产生的问题。通常用<strong>Exception</strong>描述。</p>
+<p>在java中，把异常封装成了一个类，当出现问题时，就会创建异常类对象并抛出异常相关的信息（如详细信息，名称以及异常所处的位置）。</p>
+<h2 id="二、异常的继承关系："><a href="#二、异常的继承关系：" class="headerlink" title="二、异常的继承关系："></a>二、异常的继承关系：</h2><p><strong>Throwable类</strong>是所有错误跟异常类的超类（祖宗类）。</p>
+<p><strong>Exception异常类及其子类</strong>都是继承自Throwable类，用来表示java中可能出现的异常，并且合理的处理这些异常。</p>
+<p><strong>RuntimeException类</strong>是运行异常类，继承自Exception类，它以及它的子类只能在运行过程中存在，<strong>当出现时，只能修改源代码</strong>，此异常无法处理。</p>
+<p><strong>Erroe类</strong>是与Exception的平级的类，用来表示Java中存在的严重错误，只能通过修改代码来解决问题。</p>
+<h2 id="继承体系的总结："><a href="#继承体系的总结：" class="headerlink" title="继承体系的总结："></a>继承体系的总结：</h2><p><strong>Throwable: 它是所有错误与异常的超类（祖宗类）</strong></p>
+<p> <strong>|- Error 错误</strong></p>
+<p> <strong>|- Exception 编译期异常,进行编译JAVA程序时出现的问题</strong></p>
+<p> <strong>|- RuntimeException 运行期异常, JAVA程序运行过程中出现的问题</strong></p>
+<h2 id="三、异常与错误的区别："><a href="#三、异常与错误的区别：" class="headerlink" title="三、异常与错误的区别："></a>三、异常与错误的区别：</h2><p>异常是指程序在<strong>编译或者运行时出现的某种异常问题</strong>，我们可以对异常进行某种处理，如果不处理异常的话，程序将会停止运行。 </p>
+<p>错误是指<strong>程序在运行时出现的严重问题，无法处理，程序将会停止运行，Error通常都是系统级别的问题，都是虚拟机jvm所在系统发生的</strong>，只能<strong>通过修改源代码</strong>解决问题。</p>
+<h2 id="四、异常产生的过程："><a href="#四、异常产生的过程：" class="headerlink" title="四、异常产生的过程："></a>四、异常产生的过程：</h2><p>1.运行或编译时产生异常</p>
+<p>2.创建异常类的对象</p>
+<p>3.声明异常类</p>
+<p>4.将异常类对象传给调用者（main()方法）处理</p>
+<p>5.调用者无法处理，再将异常类对象传给jvm虚拟机</p>
+<p>6.jvm虚拟机将异常类的信息（名称、详细信息、异常所处的位置）打印在屏幕上，并且停止程序的运行</p>
+<p> <img src="/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/2.png" alt="image-20210117175914834"></p>
+<h2 id="五、抛出异常类"><a href="#五、抛出异常类" class="headerlink" title="五、抛出异常类"></a>五、抛出异常类</h2><p> 在java中，提供了一个<strong>throw关键字</strong>，用来抛出一个指定的异常。</p>
+<p>使用方法：</p>
+<p>1.创建一个异常对象。封装一些提示信息</p>
+<p>2.将这个异常告知调用者</p>
+<p><strong>使用格式：throw new 异常类名（参数）；</strong></p>
+<h2 id="六、声明异常throws"><a href="#六、声明异常throws" class="headerlink" title="六、声明异常throws"></a>六、声明异常throws</h2><p>声明异常格式：</p>
+<p>修饰符 返回值类型 方法名称 （参数）</p>
+<p>throws 异常1名称，异常2名称{</p>
+<p>}</p>
+<h2 id="七、捕获异常try…catch…finally"><a href="#七、捕获异常try…catch…finally" class="headerlink" title="七、捕获异常try…catch…finally"></a>七、捕获异常try…catch…finally</h2><p>捕获异常：Java中对**异常有针对性的语句进行捕获==，可以对出现的异常进行指定方式的处理</p>
+<p>语句格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//需要被检测的语句。</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">catch</span>(异常类 变量) &#123; <span class="comment">//参数。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//异常的处理语句</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一定会被执行的语句。</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>try：该代码块中编写可能产生异常的代码。</p>
+<p>catch：用来进行某种异常的捕获，实现对捕获到的异常进行处理。</p>
+<p>finally：有一些特定的代码无论异常是否发生，都需要执行。另外，因为异常会引发程序跳转，导致有些语句执行不到。而finally就是解决这个问题的，在finally代码块中存放的代码都是一定会被执行的。</p>
+<h2 id="捕获异常的组合方式："><a href="#捕获异常的组合方式：" class="headerlink" title="捕获异常的组合方式："></a>捕获异常的组合方式：</h2><p><strong>1、try catch finally组合：检测异常，并传递给catch处理，并在finally中进行资源释放。</strong></p>
+<p><strong>2、  try catch组合 : 对代码进行异常检测，并对检测的异常传递给catch处理。对异常进行捕获处理。</strong></p>
+<p> <strong>3、 一个try 多个catch组合 : 对代码进行异常检测，并对检测的异常传递给catch处理。对每种异常信息进行不同的捕获处理。</strong></p>
+<p>注意:这种异常处理方式，要求多个catch中的异常不能相同，并且若catch中的多个异常之间有子父类异常的关系，那么子类异常要求在上面的catch处理，父类异常在下面的catch处理。</p>
+<p><strong>4、try finally 组合: 对代码进行异常检测，检测到异常后因为没有catch，所以一样会被默认jvm抛出。异常是没有捕获处理的。但是功能所开启资源需要进行关闭，所有finally。只为关闭资源。</strong></p>
+<h2 id="八、运行时期异常-RuntimeExecption"><a href="#八、运行时期异常-RuntimeExecption" class="headerlink" title="八、运行时期异常 RuntimeExecption"></a>八、运行时期异常 RuntimeExecption</h2><p>特点：方法中抛出运行时期异常,方法定义中无需throws声明,调用者也无需处理此异常</p>
+<p><strong>运行时期异常一旦发生,需要程序人员修改源代码</strong></p>
+<h2 id="九、异常在方法重写中细节"><a href="#九、异常在方法重写中细节" class="headerlink" title="九、异常在方法重写中细节"></a>九、异常在方法重写中细节</h2><p>1、子类覆盖父类方法时，如果父类的方法声明异常，子类只能声明父类异常或者该异常的子类，或者不声明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span> <span class="params">()</span> <span class="keyword">throws</span> RuntimeException </span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> RuntimeException </span>&#123; &#125;  <span class="comment">//抛出父类一样的异常</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> NullPointerException</span>&#123; &#125; <span class="comment">//抛出父类子异常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 2.当父类方法声明多个异常时，子类覆盖时只能声明多个异常的子集</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span> <span class="params">()</span> <span class="keyword">throws</span> 	NullPointerException, ClassCastException</span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span><span class="keyword">throws</span> NullPointerException,      ClassCastException </span>&#123; &#125;      </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> NullPointerException</span>&#123;     &#125; <span class="comment">//抛出父类异常中的一部分</span></span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> ClassCastException </span>&#123; &#125; <span class="comment">//抛出父类异常中的一部分</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//3.当被覆盖的方法没有异常声明时，子类覆盖时无法声明异常的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123; &#125;<span class="comment">//错误的方式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="十、异常中常用方法"><a href="#十、异常中常用方法" class="headerlink" title="十、异常中常用方法"></a>十、异常中常用方法</h2><p>在Throwable类中为我们提供了很多操作异常对象的方法，常用的如下：</p>
+<p>1、getMessage方法：返回该异常的详细信息字符串，即异常提示信息</p>
+<p>2、toString方法：返回该异常的名称与详细信息字符串**</p>
+<p><strong>3、printStackTrace：在控制台输出该异常的名称与详细信息字符串、异常出现的代码位置</strong></p>
+<h2 id="十一、自定义类异常"><a href="#十一、自定义类异常" class="headerlink" title="十一、自定义类异常"></a>十一、自定义类异常</h2><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Class 异常名 extends Exception&#123; <span class="comment">//或继承RuntimeException</span></span><br><span class="line">  <span class="keyword">public</span> 异常名()&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> 异常名(String s)&#123; </span><br><span class="line">     <span class="keyword">super</span>(s); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">  <span class="comment">/*为什么要定义构造函数，因为看到Java中的异常描述类中有提		供对异常对象的初始化方法。*/</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String message)</span>   </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(message);</span><br><span class="line"><span class="comment">// 如果自定义异常需要异常信息，可调用父类的带有字符串参数的构造函数即可。</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//自定义异常继承RuntimeException演示：</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span></span>&#123;</span><br><span class="line">  <span class="comment">/*为什么要定义构造函数，因为看到Java中的异常描述类中有提		供对异常对象的初始化方法。 */</span></span><br><span class="line">  MyException()&#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  MyException(String message)   &#123;</span><br><span class="line">    <span class="keyword">super</span>(message);</span><br><span class="line">      <span class="comment">// 如果自定义异常需要异常信息，可以通过调用父类的带有字符串参数的构造函数即可。</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>==实例代码：throw,throws,try/catch的使用==</p>
+<p><img src="/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/wps2.jpg" alt="img"> </p>
+<p> <img src="/2022/01/10/%E5%8C%BF%E5%90%8D%E7%B1%BB%E5%92%8C%E5%BC%82%E5%B8%B8%E7%B1%BB/3.png" alt="image-20210117175419779"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/01/10/%E5%86%85%E9%83%A8%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/01/10/%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 Yuu Xii
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
