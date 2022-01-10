@@ -713,16 +713,16 @@
         <h1 id="Git-：目前世界上最先进的分布式版本控制系统"><a href="#Git-：目前世界上最先进的分布式版本控制系统" class="headerlink" title="Git ：目前世界上最先进的分布式版本控制系统"></a>Git ：目前世界上最先进的分布式版本控制系统</h1><p>git的最基本作用是版本控制，比如你写一个文档，老板一直让你改，这时笨的人会在原文档上直接改，聪明一点的会复制一下原文档，在副本上修改，这时老板说你的第三版比较好，笨的人煞笔了。。聪明一点的就直接拷贝了第三版给客户发过去了。然后聪明一点的认为这次的事情完事了把其他没用的都删了，突然有一天老板说客户的意见和你最后一版的相同，这时聪明一点的人也煞笔了。。。。</p>
 <p>来了个最聪明的人，会用git，他在本地建了一个版本库，每次老板让他修改，他就把之前的版本提交一下，并标明这版的主要特点，这样文件夹里就只有一个文档，每次老板说要那个版本的，他就直接从版本库里恢复一下。</p>
 <p>git通常在编程中会用到，通常是多个人同时协作一个项目，有可能出现两个人同时修改一个文件，这时后提交的人会遇到冲突，需要解决冲突；git能够记录每个人的提交修改等形成日志，可以根据提交记录进行回滚；并且git支持分布式部署。</p>
-<p><img src="/2022/01/10/Git%20/wps1.jpg" alt="img"> </p>
+<p>![img](Git .assets/wps1.jpg) </p>
 <h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><p>1、远程（remote）通过<u><strong>克隆或者提取</strong></u>的方式到仓库（repository）再通过<u><strong>查看</strong></u>的  方式到工作区（workspace）</p>
 <p>2、远程（remote）直接通过<u><strong>pull拉取</strong></u>的方式到工作区（workspace）</p>
 <p>3、工作区（workspace）通过<u><strong>添加</strong></u>的方式到暂存区（index），再通过<u><strong>提交</strong></u>（commit)的方式到仓库区（repository），仓库区（repository）再通过<u><strong>推送</strong></u>（push）的方式到远程（remote）</p>
 <h2 id="如何从本地推送文件到远端："><a href="#如何从本地推送文件到远端：" class="headerlink" title="如何从本地推送文件到远端："></a>如何从本地推送文件到远端：</h2><p>1、需要创建一个文件夹，可以<strong>右键直接新建</strong>，也可以通过<strong>git bash</strong>或者 分别输入以下操作 例如建立TEST </p>
-<p><img src="/2022/01/10/Git%20/wps2.jpg" alt="img"> </p>
+<p>![img](Git .assets/wps2.jpg) </p>
 <p>2、通过命令<strong>git init</strong> 把文件夹变成git可管理的仓库</p>
-<p><img src="/2022/01/10/Git%20/wps3.jpg" alt="img"></p>
+<p>![img](Git .assets/wps3.jpg)</p>
 <p>3、在TEST里添加文件，不要.git里添加</p>
-<p><img src="/2022/01/10/Git%20/wps4.jpg" alt="img"> </p>
+<p>![img](Git .assets/wps4.jpg) </p>
 <p>4、用git status查看状态</p>
 <p><img src="/2022/01/10/Git%20/wps5.jpg" alt="img"></p>
 <p>5、通过git .add .把项目添加到仓库上</p>
@@ -792,7 +792,7 @@
 <h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><p> git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
 <h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
 <h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
-<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#x6f;&#x75;&#114;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#121;&#x6f;&#x75;&#114;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#x6f;&#117;&#x72;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#121;&#x6f;&#117;&#x72;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#46;&#99;&#111;&#x6d;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
 <p><img src="/2022/01/10/Git%20/wps33.jpg" alt="img"> </p>
 <p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
 <h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
@@ -1116,8 +1116,7 @@
       
         <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h1 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h1><h2 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h2><p>边吃饭边看手机，看起来是多个任务，但在同一时间里只做了一件事情</p>
 <h2 id="多线程-1"><a href="#多线程-1" class="headerlink" title="多线程"></a>多线程</h2><p>原来只有一条车道，慢慢因为车多了，道路堵塞，效率降低，因此开辟了一条道路</p>
-<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg" class>
-
+<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><p><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg"></p>
 <h2 id="进程-process-和线程-Thread-关系"><a href="#进程-process-和线程-Thread-关系" class="headerlink" title="进程(process)和线程(Thread)关系"></a>进程(process)和线程(Thread)关系</h2><p><code>一个进程可以有多个线程，</code>如视频中同时听到声音，看到图片，看弹幕等。<code>一个进程至少有一个线程，线程是CPU调度和执行的单位</code></p>
 <p>很多多线程是模拟出来的，<code>真正的多线程是多个CPU，即多核，如服务器</code></p>
 <p><code>程序</code>：是指令和数据的有序集合，其本身没有，任何运行的含义，是一个<code>静态</code>的概念</p>
@@ -1153,8 +1152,7 @@
 <p>5、提交执行：Futureresult1=ser.submit(线程名称)</p>
 <p>6、获取结果：boolean r=result1.get()</p>
 <p>7、关闭服务：ser.shutdownNow();</p>
-<img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" class>
-
+<p><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg"></p>
 <h2 id="Callable好处"><a href="#Callable好处" class="headerlink" title="Callable好处"></a>Callable好处</h2><p>1、可以定义为返回值</p>
 <p>2、可以抛出异常</p>
 <h1 id="静态代理（进程的实现原理）"><a href="#静态代理（进程的实现原理）" class="headerlink" title="静态代理（进程的实现原理）"></a>静态代理（进程的实现原理）</h1><p>你：真实角色</p>
@@ -1176,8 +1174,7 @@
 <p>3、删去括号</p>
 <p>4、删去花括号，<code>但只能是一条语句(以上可以一起执行)</code></p>
 <p>5、<code>有多个参数类型。去掉参数，用逗号隔开且用括号括起来</code></p>
-<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" class>
-
+<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><p><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png"></p>
 <p>1000毫秒=1秒</p>
 <h2 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h2><p>1、推荐线程自己停止下来</p>
 <p>2、建议使用一个标志位进行终止变量，当flag=false，则终止线程运行</p>
