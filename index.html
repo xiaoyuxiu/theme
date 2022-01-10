@@ -245,7 +245,7 @@
 <h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><p> git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
 <h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
 <h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
-<p>ssh-keygen -t rsa –C “<a href="mailto:&#x79;&#x6f;&#117;&#114;&#101;&#x6d;&#97;&#105;&#108;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;">&#x79;&#x6f;&#117;&#114;&#101;&#x6d;&#97;&#105;&#108;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#x6f;&#x75;&#114;&#x65;&#x6d;&#97;&#x69;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;">&#121;&#x6f;&#x75;&#114;&#x65;&#x6d;&#97;&#x69;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#109;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
 <p><img src="/2022/01/10/Git%20/wps33.jpg" alt="img"> </p>
 <p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
 <h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
@@ -569,7 +569,7 @@
       
         <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h1 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h1><h2 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h2><p>边吃饭边看手机，看起来是多个任务，但在同一时间里只做了一件事情</p>
 <h2 id="多线程-1"><a href="#多线程-1" class="headerlink" title="多线程"></a>多线程</h2><p>原来只有一条车道，慢慢因为车多了，道路堵塞，效率降低，因此开辟了一条道路</p>
-<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg" class>
+<h2 id="普通方法和多线程"><a href="#普通方法和多线程" class="headerlink" title="普通方法和多线程"></a>普通方法和多线程</h2><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.jpg" class>
 
 <h2 id="进程-process-和线程-Thread-关系"><a href="#进程-process-和线程-Thread-关系" class="headerlink" title="进程(process)和线程(Thread)关系"></a>进程(process)和线程(Thread)关系</h2><p><code>一个进程可以有多个线程，</code>如视频中同时听到声音，看到图片，看弹幕等。<code>一个进程至少有一个线程，线程是CPU调度和执行的单位</code></p>
 <p>很多多线程是模拟出来的，<code>真正的多线程是多个CPU，即多核，如服务器</code></p>
@@ -606,7 +606,7 @@
 <p>5、提交执行：Futureresult1=ser.submit(线程名称)</p>
 <p>6、获取结果：boolean r=result1.get()</p>
 <p>7、关闭服务：ser.shutdownNow();</p>
-<img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" class>
+<img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B2.png" class>
 
 <h2 id="Callable好处"><a href="#Callable好处" class="headerlink" title="Callable好处"></a>Callable好处</h2><p>1、可以定义为返回值</p>
 <p>2、可以抛出异常</p>
@@ -629,7 +629,7 @@
 <p>3、删去括号</p>
 <p>4、删去花括号，<code>但只能是一条语句(以上可以一起执行)</code></p>
 <p>5、<code>有多个参数类型。去掉参数，用逗号隔开且用括号括起来</code></p>
-<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" class>
+<h1 id="3、线程状态"><a href="#3、线程状态" class="headerlink" title="3、线程状态"></a>3、线程状态</h1><img src="/2022/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/01/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.jpg" class>
 
 <p>1000毫秒=1秒</p>
 <h2 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h2><p>1、推荐线程自己停止下来</p>
