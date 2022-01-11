@@ -618,7 +618,7 @@
 <p>（不用重写接口方法)，也可以 是普通类（必须重写接口方法)==</p>
 <p>3.接口继承关系的特点：继承关系，也可以是多继承：</p>
 <p>   格式：接口 extends 接口1，接口2，接口3……..</p>
-<p><img src="/2022/01/10/%E6%8E%A5%E5%8F%A3/1-16418212335791.png" alt="1"></p>
+<p><img src="/2022/01/10/%E6%8E%A5%E5%8F%A3/1.png" alt="1"></p>
 <h2 id="继承和实现的区别"><a href="#继承和实现的区别" class="headerlink" title="继承和实现的区别"></a>继承和实现的区别</h2><p>继承体现的是 “is a”的关系，父类中定义共性内容</p>
 <p>实现体现的是“like a”的关系，接口中定义拓展功能</p>
 <p>比如：狗和猫都有吃饭睡觉，就把这些共性定义在父类。猫会独特的跳高，把这个属性定义在接口，再让猫调用</p>
@@ -1180,8 +1180,8 @@
 <h6 id="4、全外连接（交集-两个表）"><a href="#4、全外连接（交集-两个表）" class="headerlink" title="4、全外连接（交集+两个表）"></a>4、全外连接（交集+两个表）</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bo.<span class="operator">*</span>,b.<span class="operator">*</span> <span class="keyword">from</span> beauty b <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> boys.bo <span class="keyword">on</span> b.<span class="string">&#x27;boyfriend_id&#x27;</span><span class="operator">=</span>bo.<span class="string">&#x27;id’; </span></span><br></pre></td></tr></table></figure>
 
 <h6 id="5、交叉连接-乘积连接）"><a href="#5、交叉连接-乘积连接）" class="headerlink" title="5、交叉连接(乘积连接）"></a>5、交叉连接(乘积连接）</h6><p>select bo.<em>,b.</em> from beauty b full cross join boys bo </p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9310-16418126560921.png" alt="image-20220109204241236"></p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9311-16418126691932.png" alt="image-20220109204250462"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9310.png" alt="image-20220109204241236"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9311.png" alt="image-20220109204250462"></p>
 <h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><p>含义：出现在其他语句中的select语句，称为子查询或内查询</p>
 <p>外部的查询称为主查询或外查询</p>
 <p>分类：按子查询出现的位置——select 后面：仅仅支持标量子查询</p>
@@ -1192,7 +1192,7 @@
 <p>​                                          列子查询（结果集只有一列多行）</p>
 <p>​                                          行子查询（结果集只有一行多列）</p>
 <p>​                                          表子查询（结果集一般为多行多列）</p>
-<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9312-16418127622883.png"></p>
+<p><img src="/2022/01/10/SQL%E5%88%9D%E7%BA%A7/%E6%95%B0%E6%8D%AE%E5%BA%9312.png"></p>
 <h6 id="一、where或having后面"><a href="#一、where或having后面" class="headerlink" title="一、where或having后面"></a>一、where或having后面</h6><p>标量子查询（单行子查询）、列子查询（多行子查询）、行子查询（多列多行）</p>
 <p>特点：1、子查询放在小括号内</p>
 <p>​            2、子查询放在条件右侧</p>
@@ -1355,7 +1355,7 @@
 <h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><p> git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
 <h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
 <h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
-<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#105;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;">&#121;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#105;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p>ssh-keygen -t rsa –C “<a href="mailto:&#121;&#111;&#117;&#114;&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#121;&#111;&#117;&#114;&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
 <p>![img](Git .assets/wps33.jpg) </p>
 <p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
 <h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
