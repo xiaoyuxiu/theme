@@ -148,6 +148,184 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-事件处理模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/10/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F/" class="article-date">
+  	<time datetime="2022-01-10T07:50:14.805Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件处理模式"><a href="#事件处理模式" class="headerlink" title="事件处理模式"></a>事件处理模式</h1><h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><p>　　事件是用户在界面上的一个操作（通常使用各种输入设备，如：鼠标、键盘等来完成）。 </p>
+<p>　　当一个事件发生时，该事件用<strong>一个事件对象来表示。事件对象有对应的事件类。</strong>不同的事件类描述不同类型的用户动作。<strong>事件类包含在java.awt.event和javax.swing.event包中。</strong></p>
+<h2 id="2-事件源"><a href="#2-事件源" class="headerlink" title="2.事件源"></a>2.事件源</h2><p>　　<strong>产生事件的组件叫事件源。</strong>在一个按钮上单击鼠标时，该按钮就是事件源，会产生一个ActionEvent类型的事件。</p>
+<h2 id="3-事件处理器（事件处理方法）"><a href="#3-事件处理器（事件处理方法）" class="headerlink" title="3.事件处理器（事件处理方法）"></a>3.事件处理器（事件处理方法）</h2><p>　　事件处理器是一个<strong>接收事件对象并进行相应处理的方法。</strong>事件处理器包含在一个类中，这个类的对象负责检查事件是否发生，<strong>若发生就激活事件处理器进行处理。</strong></p>
+<h2 id="4-事件监听器类"><a href="#4-事件监听器类" class="headerlink" title="4.事件监听器类"></a>4.事件监听器类</h2><p>　　<strong>包含事件处理器，并负责检查事件是否发生，若发生就激活事件处理器进行处理的类叫做事件监听器类。</strong>其实例就是事件监听器对象。事件监听器类必须实现事件监听器接口或继承事件监听器适配器类。</p>
+<p>　　事件监听器接口定义了处理事件必须实现的方法。事件监听器适配器类是对事件监听器接口的简单实现。目的是为了减少编程的工作量。</p>
+<p>　　事件监听器接口和事件监听器适配器类也都包含在java.awt.event和javax.swing.event包中。</p>
+<h2 id="5-注册事件监听器"><a href="#5-注册事件监听器" class="headerlink" title="5.注册事件监听器"></a>5.注册事件监听器</h2><p>　　为了能够让事件监听器检查某个组件（事件源）是否发生了某些事件，并且在发生时激活事件处理器进行相应的处理，<strong>必须在事件源上注册事件监听器。</strong>这是通过使用事件源组件的以下方法来完成的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addXxxListener（事件监听器对象）</span><br><span class="line">Xxx对应相应的事件类。</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/01/10/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.png"></p>
+<h2 id="重点！！！"><a href="#重点！！！" class="headerlink" title="重点！！！"></a>重点！！！</h2><p>**思路：创建一个该监视器对象的类–&gt;声明ActionListener接口–&gt;重写actionPerformed方法–&gt;再创建一个[任意命名]类从而创建监视器–&gt;通过addActionListener有监视器的类（监视器）服务于的对象 **</p>
+<p>编写一个监听器类，该监听器类实现了XXXListener接口，（假定监听器类的类名为MyXXXListener)；</p>
+<p>在MyXXXListener中的相应事件处理方法中编写事件处理代码（事件处理器）。</p>
+<p>调用GUI组件c的addXXXListener()方法注册事件监听器对象。 c.addXXXListener(new MyXXXListener());</p>
+<p>要处理C上的多种事件，可以编写多个相应的监听器类，进行多次注册。也可以编写一个实现了多个监听器接口的类，进行一次注册。</p>
+<h1 id="事件、事件监听器接口、事件监听器类"><a href="#事件、事件监听器接口、事件监听器类" class="headerlink" title="事件、事件监听器接口、事件监听器类:"></a>事件、事件监听器接口、事件监听器类:</h1><p><strong>每一类事件有一个相应的事件监听器接口，该接口定义了接收和处理事件的抽象方法。实现该接口的类，就是监听器类。</strong>其对象可</p>
+<p>作为监听器对象向相应的组件注册。 </p>
+<p>事件的类名通常为：XxxEvent </p>
+<p>对应的事件监听器接口名通常为：XxxListener</p>
+<p>一个监听器接口定义了一种以上的抽象事件处理方法（事件处理</p>
+<p>器）。</p>
+<p>事件监听器类实现事件监听器接口，其类名可以由我们自己取。事</p>
+<p>件监听器类需要我们自己编写。</p>
+<p>一个组件可以注册一个或多个监听器对象，事件对象只向已注册的</p>
+<p>监听器对象报告事件的发生。</p>
+<h2 id="1、事件监听器类的编写要点"><a href="#1、事件监听器类的编写要点" class="headerlink" title="1、事件监听器类的编写要点"></a>1、事件监听器类的编写要点</h2><p>事件监听器类应该包括以下两部分内容：</p>
+<p>(1)在事件监听器类的声明中指定要实现的监听器接口名，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyListener</span> <span class="keyword">implements</span> <span class="title">XxxListener</span> </span>&#123; </span><br><span class="line">　… &#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)实现监听器接口中的事件处理方法，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 事件处理方法名(XxxEvent e) &#123; </span><br><span class="line">　　...<span class="comment">//处理某个事件的代码... &#125; </span></span><br></pre></td></tr></table></figure>
+
+<p>然后，在一个或多个组件上可以进行监听器类的实例的注册。如：组件对象.addXxxListener(MyListener对象); </p>
+<h2 id="2、java-awt-event-包中最常用的语义事件类："><a href="#2、java-awt-event-包中最常用的语义事件类：" class="headerlink" title="2、java.awt.event 包中最常用的语义事件类："></a>2、java.awt.event 包中最常用的语义事件类：</h2><p> •ActionEvent (对应按钮点击、 菜单选择、选择列表项或在文本框中 ENTER); </p>
+<p> •AdjustmentEvent (用户调节滚动条)；</p>
+<p> •ItemEvem (用户从复选框或列表框中选择一项）。</p>
+<h2 id="3、常用的-5-个底层事件类是："><a href="#3、常用的-5-个底层事件类是：" class="headerlink" title="3、常用的 5 个底层事件类是："></a>3、常用的 5 个底层事件类是：</h2><p> •KeyEvent (一个键被按下或释放)；</p>
+<p> •MouseEvent (鼠标键被按下、 释放、 移动或拖动)；</p>
+<p> •MouseWheelEvent (鼠标滚轮被转动)；</p>
+<p> •FocusEvent (某个组件获得焦点或失去焦点)；</p>
+<p> •WindowEvent ( 窗口状态被改变）</p>
+<p>所有的Listener接口都继承于EventListener,位于java.util包中。</p>
+<h2 id="4、AWT事件接口及处理方法（java-awt-event包）"><a href="#4、AWT事件接口及处理方法（java-awt-event包）" class="headerlink" title="4、AWT事件接口及处理方法（java.awt.event包）"></a>4、AWT事件接口及处理方法（java.awt.event包）</h2><table>
+<thead>
+<tr>
+<th>接口</th>
+<th>方法</th>
+<th>事件源</th>
+<th>参数/访问方法</th>
+<th>描述信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ActionListener</td>
+<td>actionPerformed</td>
+<td>AbstractButton JComboBox   JTextFieldTimer</td>
+<td>ActionEvent/getActionCommand、getModifiers</td>
+<td>单击按钮、单击菜单项文本框内按回车等动作</td>
+</tr>
+<tr>
+<td>AdjustmentListener</td>
+<td>adjustmentValueChanged</td>
+<td>JScrollbar</td>
+<td>AdjustmentEvent/getAdjustable、getAdjustmentType、getValue</td>
+<td>移动了滚动条等组件</td>
+</tr>
+<tr>
+<td>ItemListener</td>
+<td>itemStateChanged</td>
+<td>AbstractButtonJ、ComboBox</td>
+<td>ItemEvent/getltem、getltemSelectable、getStateChange</td>
+<td>选择了可选项的内容</td>
+</tr>
+<tr>
+<td>FocusListener</td>
+<td>focusGained  focusLost</td>
+<td>Component</td>
+<td>FocusEvent\sTemporary</td>
+<td>组件得到或失去焦点</td>
+</tr>
+<tr>
+<td>KeyListener</td>
+<td>keyPressed、keyReleased、keyTyped</td>
+<td>Component</td>
+<td>KeyEvent/getKeyChar、getKeyCode、getKeyModifiersText、getKeyTex、isActionKey</td>
+<td>键盘输入</td>
+</tr>
+<tr>
+<td>MouseListener</td>
+<td>mousePressed、mouseReleased 、mouseEntered 、  mouseExited  、mouseClicked</td>
+<td>Component</td>
+<td>MouseEvent/getClickCount、getX、getY、translatePoint、getPoint</td>
+<td>鼠标点击等</td>
+</tr>
+<tr>
+<td>MouseMotionListener</td>
+<td>mouseDragged、mouseMoved</td>
+<td>Component</td>
+<td>MouseEven</td>
+<td>鼠标移动</td>
+</tr>
+<tr>
+<td>MouseWheelListener</td>
+<td>mouseWheelMoved</td>
+<td>Component</td>
+<td>MouseWheelEvent/getWheelRotation、getScrollAmount</td>
+<td>鼠标滚轮被转动</td>
+</tr>
+<tr>
+<td>WindowListener</td>
+<td>windowClosing、windowOpened、windowlconified、windowDeiconified、windowClosed、windowActivated、windowDeactivated</td>
+<td>Window</td>
+<td>WindowEvent/getWindow</td>
+<td>窗口事件</td>
+</tr>
+<tr>
+<td>WindowFocusListener</td>
+<td>windowGainedFocus 、windowLostFocus</td>
+<td>Window</td>
+<td>WindowEvent/getOppositeWindow</td>
+<td>窗体得到或失去焦点</td>
+</tr>
+<tr>
+<td>WindowStateListener</td>
+<td>windowStateChanged</td>
+<td>Window</td>
+<td>WindowEvent/getOldState、getNewState</td>
+<td>窗体状态</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>getDocument</td>
+<td>/</td>
+<td>DocumentEvent/changedUpdata(DocumentEvent e)、RemoveUpdata(DocumentEvent e)、insertUpdata(DocumentEvent e)</td>
+<td>文本区所维护的文档</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-多线程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
