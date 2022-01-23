@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="单链表相关代码单链表结点Node类的一个实例表示单链表的一个节点，若干节点通过next链指定相互之间的顺序关系，形成一条单链表 1234567891011121314151617public class Node&lt;T&gt; &amp;#123;    public Node&lt;T&gt; next;    public T data;      public Node(T data,Node&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/23/%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="单链表相关代码单链表结点Node类的一个实例表示单链表的一个节点，若干节点通过next链指定相互之间的顺序关系，形成一条单链表 1234567891011121314151617public class Node&lt;T&gt; &amp;#123;    public Node&lt;T&gt; next;    public T data;      public Node(T data,Node&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-23T07:08:57.228Z">
+<meta property="article:modified_time" content="2022-01-23T07:07:45.763Z">
+<meta property="article:author" content="Yuu Xii">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/2.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Yuu Xii</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="[object Object]" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-单链表相关代码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/23/%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81/" class="article-date">
+  	<time datetime="2022-01-23T07:08:57.228Z" itemprop="datePublished">2022-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="单链表相关代码"><a href="#单链表相关代码" class="headerlink" title="单链表相关代码"></a>单链表相关代码</h1><h2 id="单链表结点"><a href="#单链表结点" class="headerlink" title="单链表结点"></a>单链表结点</h2><p>Node类的一个实例表示单链表的一个节点，若干节点通过next链指定相互之间的顺序关系，形成一条单链表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Node&lt;T&gt; next;</span><br><span class="line">    <span class="keyword">public</span> T data;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(T data,Node&lt;T&gt; next)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = data;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="keyword">this</span>.data.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="详细方法"><a href="#详细方法" class="headerlink" title="详细方法"></a>详细方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SinglyList</span>&lt;<span class="title">Plane</span>&gt; <span class="keyword">extends</span> <span class="title">Object</span></span>&#123;</span><br><span class="line">   <span class="keyword">public</span> Node&lt;Plane&gt; head;</span><br><span class="line">   <span class="keyword">public</span> Plane data;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SinglyList</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.head=<span class="keyword">new</span> Node&lt;Plane&gt;();</span><br><span class="line">   &#125;</span><br><span class="line">	<span class="comment">//形成链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SinglyList</span><span class="params">(List&lt;List&lt;Plane&gt;&gt; planes )</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();</span><br><span class="line">        Node&lt;Plane&gt; rear=<span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;planes.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(planes.get(i) != <span class="keyword">null</span>)&#123;</span><br><span class="line">                rear.next= <span class="keyword">new</span> Node&lt;Plane&gt;(planes.get(i),<span class="keyword">null</span>);</span><br><span class="line">                rear= rear.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="keyword">this</span>.head.next==<span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取特定位置的元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Plane&gt; <span class="title">get</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        Node&lt;Plane&gt; p=<span class="keyword">this</span>.head.next;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; p!=<span class="keyword">null</span> &amp;&amp; j&lt;i; j++)                 </span><br><span class="line">            p = p.next;</span><br><span class="line">        <span class="keyword">return</span> (i&gt;=<span class="number">0</span> &amp;&amp; p!=<span class="keyword">null</span>) ? p.data : <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取链表长度</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">        Node tmp=head;</span><br><span class="line">        <span class="keyword">while</span> (tmp!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            len++;</span><br><span class="line">            tmp=tmp.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//输出链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String str=<span class="string">&quot;(&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(Node&lt;Plane&gt; p=<span class="keyword">this</span>.head.next;p!=<span class="keyword">null</span>;p=p.next)</span><br><span class="line">            str+=p.data.toString()+(p.next!=<span class="keyword">null</span>?<span class="string">&quot;,&quot;</span>:<span class="string">&quot;&quot;</span>)+<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> str+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//往哪个位置插入哪个元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node&lt;T&gt; <span class="title">insert</span><span class="params">(<span class="keyword">int</span> x,T x)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(x==<span class="keyword">null</span>)&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	Node&lt;T&gt; front=<span class="keyword">this</span>.head;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;front.next!=<span class="keyword">null</span> &amp;&amp; j&lt;i;j++)&#123;</span><br><span class="line">    		front=front.next;</span><br><span class="line">    	&#125;</span><br><span class="line">    	front.next=<span class="keyword">new</span> Node&lt;T&gt;(x,front.next);</span><br><span class="line">    	<span class="keyword">return</span> front.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//往最后一个数插入位置</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node&lt;T&gt; <span class="title">insert</span><span class="params">(T x)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> insert(Integer.MAX_VALUE,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除第i个元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">remove</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    	Node&lt;T&gt; front=<span class="keyword">this</span>.head; </span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;front.next!=<span class="keyword">null</span> &amp;&amp; j&lt;i;j++)&#123;</span><br><span class="line">    		front=front.next;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">if</span>(i&gt;=<span class="number">0</span> &amp;&amp; front.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    		T x=front.next.data;</span><br><span class="line">    		front.next=front.next.next;</span><br><span class="line">    		<span class="keyword">return</span> x;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除单链表所有元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clean</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.head.next=<span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历所有元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node&lt;T&gt; <span class="title">bianli</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Node&lt;T&gt; p=head;</span><br><span class="line">    	<span class="keyword">while</span>(p!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    		System.out.println(p.data.toString()+“ ”)；</span><br><span class="line">    		p=p.next;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//修改元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> data,<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">    	Node p=head;</span><br><span class="line">    	<span class="keyword">while</span>(index&lt;i)&#123;</span><br><span class="line">    		p=p.next;</span><br><span class="line">    		index++;</span><br><span class="line">    	&#125;</span><br><span class="line">    	p.data=data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查找指定元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">search</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">    	Node p=head;</span><br><span class="line">    	<span class="keyword">while</span>(index&lt;i)&#123;</span><br><span class="line">    		index++;</span><br><span class="line">    		p=p.next;</span><br><span class="line">    	&#125;</span><br><span class="line">    	System.out.println(p.data);</span><br><span class="line">    	<span class="keyword">return</span> p.data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/01/13/MVC%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 Yuu Xii
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
