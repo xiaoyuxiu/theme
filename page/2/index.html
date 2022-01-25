@@ -148,6 +148,232 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Git " class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/10/Git%20/" class="article-date">
+  	<time datetime="2022-01-10T08:16:27.618Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-：目前世界上最先进的分布式版本控制系统"><a href="#Git-：目前世界上最先进的分布式版本控制系统" class="headerlink" title="Git ：目前世界上最先进的分布式版本控制系统"></a>Git ：目前世界上最先进的分布式版本控制系统</h1><p>git的最基本作用是版本控制，比如你写一个文档，老板一直让你改，这时笨的人会在原文档上直接改，聪明一点的会复制一下原文档，在副本上修改，这时老板说你的第三版比较好，笨的人煞笔了。。聪明一点的就直接拷贝了第三版给客户发过去了。然后聪明一点的认为这次的事情完事了把其他没用的都删了，突然有一天老板说客户的意见和你最后一版的相同，这时聪明一点的人也煞笔了。。。。</p>
+<p>来了个最聪明的人，会用git，他在本地建了一个版本库，每次老板让他修改，他就把之前的版本提交一下，并标明这版的主要特点，这样文件夹里就只有一个文档，每次老板说要那个版本的，他就直接从版本库里恢复一下。</p>
+<p>git通常在编程中会用到，通常是多个人同时协作一个项目，有可能出现两个人同时修改一个文件，这时后提交的人会遇到冲突，需要解决冲突；git能够记录每个人的提交修改等形成日志，可以根据提交记录进行回滚；并且git支持分布式部署。</p>
+<p>![img](Git .assets/wps1.jpg) </p>
+<h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><p>1、远程（remote）通过<u><strong>克隆或者提取</strong></u>的方式到仓库（repository）再通过<u><strong>查看</strong></u>的  方式到工作区（workspace）</p>
+<p>2、远程（remote）直接通过<u><strong>pull拉取</strong></u>的方式到工作区（workspace）</p>
+<p>3、工作区（workspace）通过<u><strong>添加</strong></u>的方式到暂存区（index），再通过<u><strong>提交</strong></u>（commit)的方式到仓库区（repository），仓库区（repository）再通过<u><strong>推送</strong></u>（push）的方式到远程（remote）</p>
+<h2 id="如何从本地推送文件到远端："><a href="#如何从本地推送文件到远端：" class="headerlink" title="如何从本地推送文件到远端："></a>如何从本地推送文件到远端：</h2><p>1、需要创建一个文件夹，可以<strong>右键直接新建</strong>，也可以通过<strong>git bash</strong>或者 分别输入以下操作 例如建立TEST </p>
+<p>![img](Git .assets/wps2.jpg) </p>
+<p>2、通过命令<strong>git init</strong> 把文件夹变成git可管理的仓库</p>
+<p>![img](Git .assets/wps3.jpg)</p>
+<p>3、在TEST里添加文件，不要.git里添加</p>
+<p>![img](Git .assets/wps4.jpg) </p>
+<p>4、用git status查看状态</p>
+<p>![img](Git .assets/wps5.jpg)</p>
+<p>5、通过git .add .把项目添加到仓库上</p>
+<p>![img](Git .assets/wps6.jpg)</p>
+<p>6、用git commit -m‘first commit’ 提交到仓库</p>
+<p>![img](Git .assets/wps7.jpg)</p>
+<p>7、通过 git remote add origin+远程库地址来关联远程库![img](Git .assets/wps8.jpg)</p>
+<p>8、若远程库不为空，则必须通过git pull –rebase origin master获取远程库与本地库合并</p>
+<p>9、用git push上传项目</p>
+<p>![img](Git .assets/wps9.jpg) </p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>git pull –rebase 表示把你的本地当前分支里的每个提交(commit)取消掉并且把它们临时保存为补丁(patch)**（这些补丁放到”.git/rebase”目录中)**，然后把本地当前分支更新为最新的”origin”分支，最后把保存的这些补丁应用到本地当前分支上。</p>
+<h2 id="读取他人项目操作："><a href="#读取他人项目操作：" class="headerlink" title="读取他人项目操作："></a>读取他人项目操作：</h2><p>1、在搜索框搜索他人仓库（对方名字/仓库名）</p>
+<p>2、 点击进入</p>
+<p>3、点击fork，就可以把他人仓库拷贝到本地</p>
+<p>![img](Git .assets/wps10.jpg) </p>
+<p>4、 用笔可对文件进行修改，直接在空白处修改，则你的本地项目有变化，但他人的项目还是没有变化</p>
+<p>![img](Git .assets/wps11.jpg) </p>
+<h2 id="如何让你改变项目之后也保存在他人的项目中："><a href="#如何让你改变项目之后也保存在他人的项目中：" class="headerlink" title="如何让你改变项目之后也保存在他人的项目中："></a>如何让你改变项目之后也保存在他人的项目中：</h2><p>1、 点击pull request</p>
+<p>![img](Git .assets/wps12.jpg) </p>
+<p>2、 再点击New pull requests</p>
+<p>![img](Git .assets/wps13.jpg) </p>
+<p>3、 系统会自动把两个文件进行比对，再点击create pull request ，空白处为说明信息，可写可不写，再点击create pull request，要是他人同意了，则他人可以合并起来.他人收到消息后，可以在pull request点开后直接进去查看修改的内容，若是要合并，则点击Merge pull request，再点击confirm merge</p>
+<h2 id="检查修改的文件：（文件放进去都要提交）"><a href="#检查修改的文件：（文件放进去都要提交）" class="headerlink" title="检查修改的文件：（文件放进去都要提交）"></a>检查修改的文件：（文件放进去都要提交）</h2><p>1、我们在文件夹里把要提交的文件修改之后，bash会显示我们修改了文件，</p>
+<p>![img](Git .assets/wps14.jpg)但不显示修改的内容（我们将源文件的20改成80)   </p>
+<p>2、用git diff+文件名 查看内容![img](Git .assets/wps15.jpg)</p>
+<p>3、知道改了哪里之后若想提交，先add，再用git status再查看一下状态 ，确定无误再commit到仓库里</p>
+<p>![img](Git .assets/wps16.jpg)</p>
+<h2 id="版本回退："><a href="#版本回退：" class="headerlink" title="版本回退："></a>版本回退：</h2><p> 1、修改文件后，继续对文件进行修改，修改了三次，要想查看记录， 使用   git log查看 显示三次</p>
+<p>![img](Git .assets/wps17.jpg) </p>
+<p>2、把当前版本回退到上一版本，用git reset –hard HEAD<del>数字 ，例如回退到上一版本则为git reset –hard HEAD</del>1，先查看内容则用 cat+文件名 查看</p>
+<p>![img](Git .assets/wps18.png) </p>
+<p>3、又想回退到最新版本，通过git reflog 找到版本号，再通过使用git reset –hard 版本号 找回</p>
+<p>![img](Git .assets/wps19.jpg) </p>
+<p>![img](Git .assets/wps20.jpg) </p>
+<p>4、可通过cat+文件名查看是否已恢复</p>
+<p>![img](Git .assets/wps21.jpg) </p>
+<h2 id="删除本地仓库："><a href="#删除本地仓库：" class="headerlink" title="删除本地仓库："></a>删除本地仓库：</h2><p>1、进入项目所在目录</p>
+<p>![img](Git .assets/wps22.jpg) </p>
+<p>2、显示所有本地分支（初始化只有一个master分支）</p>
+<p>![img](Git .assets/wps23.jpg) </p>
+<p>3、初始化本地版仓库（重新初始化一次，可以忽略）</p>
+<p>![img](Git .assets/wps24.jpg) </p>
+<p>4、找到目录下隐藏的 .git</p>
+<p>![img](Git .assets/wps25.jpg) </p>
+<p>5、删除 .git</p>
+<p>![img](Git .assets/wps26.jpg) </p>
+<p> 6、查看是否删除</p>
+<p>![img](Git .assets/wps27.jpg) </p>
+<h2 id="工作区和暂存区的区别："><a href="#工作区和暂存区的区别：" class="headerlink" title="工作区和暂存区的区别："></a>工作区和暂存区的区别：</h2><p>工作区：就是你在电脑上看到的目录，比如目录下funny里的文件(.git隐藏目录版本库除外)。或者以后需要再新建的目录文件等等都属于工作区范畴。</p>
+<p>版本库(Repository)/仓库：工作区有一个隐藏目录.git,这个不属于工作区，这</p>
+<p>版本库。其中版本库里面存了很多东西，其中最重要的就是stage(暂存区)，还有Git为我们自动创建了第一个分支master,以及指向master的一个指针HEAD。</p>
+<p><strong>Git提交文件到版本库有两步：</strong></p>
+<p><strong>第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。</strong></p>
+<p><strong>第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。</strong></p>
+<p>![img](Git .assets/wps28.jpg)</p>
+<h2 id="Git撤销修改："><a href="#Git撤销修改：" class="headerlink" title="Git撤销修改："></a>Git撤销修改：</h2><p>1 .发现添加的有误，想删除自己添加的东西（法一自己手动修改文件，法二用版本回退）</p>
+<p>2、在做撤销之前，可用git status先查看状态</p>
+<p>![img](Git .assets/wps29.jpg) </p>
+<p>3、利用git checkout – 文件名撤销</p>
+<p>![img](Git .assets/wps30.jpg) </p>
+<p>4、利用cat +文件名查看内容是否已撤销</p>
+<p>5、注意：文件添加后没法撤销</p>
+<h2 id="Git删除文件："><a href="#Git删除文件：" class="headerlink" title="Git删除文件："></a>Git删除文件：</h2><p>1、可直接在目录下删除文件或通过rm +文件名删除</p>
+<p>![img](Git .assets/wps31.jpg) </p>
+<p>2、在没有提交之前，可用git checkout – 文件名恢复</p>
+<p>![img](Git .assets/wps32.jpg) </p>
+<h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><p> git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
+<h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
+<h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+<p>ssh-keygen -t rsa –C “<a href="mailto:&#x79;&#x6f;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#64;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#x6f;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#64;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+<p>![img](Git .assets/wps33.jpg) </p>
+<p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
+<h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
+<p>![img](Git .assets/wps34.jpg) </p>
+<p>点击 Add Key，你就应该可以看到已经添加的key。<br>![img](Git .assets/wps35.jpg)</p>
+<h3 id="如何添加远程库？"><a href="#如何添加远程库？" class="headerlink" title="如何添加远程库？"></a>如何添加远程库？</h3><p>现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创</p>
+<p>一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为</p>
+<p>备份，又可以其他人通过该仓库来协作。</p>
+<p>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
+<p>![img](Git .assets/wps36.jpg) </p>
+<p>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
+<p>![img](Git .assets/wps37.jpg) </p>
+<p>现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：</p>
+<p>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/tugenhua0707/testgit.git">https://github.com/tugenhua0707/testgit.git</a></p>
+<p>所有的如下：</p>
+<p>![img](Git .assets/wps38.jpg) </p>
+<p>把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。</p>
+<p>由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：</p>
+<p>![img](Git .assets/wps39.jpg) </p>
+<p>从现在起，只要本地作了提交，就可以通过如下命令：</p>
+<p>git push origin master</p>
+<p>把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+<h3 id="如何从远程库克隆？"><a href="#如何从远程库克隆？" class="headerlink" title="如何从远程库克隆？"></a>如何从远程库克隆？</h3><p>上面我们了解了先有本地库，后有远程库时候，如何关联远程库。</p>
+<p>现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？</p>
+<p>首先，登录github，创建一个新的仓库，名字叫testgit2.如下：</p>
+<p>![img](Git .assets/wps40.jpg) </p>
+<p>如下，我们看到：</p>
+<p>![img](Git .assets/wps41.jpg) </p>
+<p>现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：</p>
+<p>![img](Git .assets/wps42.jpg) </p>
+<p>接着在我本地目录下 生成testgit2目录了，如下所示：</p>
+<p>![img](Git .assets/wps43-16418200336241.jpg) </p>
+<h2 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h2><p>在 版本回填退里，你已经知道，每次提交，Git都把它们串成一条</p>
+<p>间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。</p>
+<p>1、 创建分支  git branch+文件名</p>
+<p>![img](Git .assets/wps44.jpg)</p>
+<p>2、切换分支  git checkout+文件名</p>
+<p>![img](Git .assets/wps45.jpg)</p>
+<p>3、也可直接创建+切换分支  git checkout -b +文件名</p>
+<p><img src="/2022/01/10/Git%20/wps46.jpg" alt="img"></p>
+<p>4、在dev的分支做测试</p>
+<p>  先在dev分支上进行修改（改数字20）</p>
+<p><img src="/2022/01/10/Git%20/wps47.jpg" alt="img">  </p>
+<p><img src="/2022/01/10/Git%20/wps48.jpg" alt="img"> </p>
+<p> 切换分支，再查看内容</p>
+<p><img src="/2022/01/10/Git%20/wps49.jpg" alt="img"> </p>
+<p>Master分支上没有显示修改后的内容，因为对其的修改是在dev分支上</p>
+<p>5、 我们可以把dev分支合并到master分支  就可以在master分支上看修  </p>
+<p>改内容  git merge （当前分支以外分支的名字）</p>
+<p><img src="/2022/01/10/Git%20/wps50.jpg" alt="img"></p>
+<p>6、删除分支  git branch -d + 文件名</p>
+<p><img src="/2022/01/10/Git%20/wps51.jpg" alt="img"> </p>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>1、新建第二个分支<img src="/2022/01/10/Git%20/wps52.jpg" alt="img"></p>
+<p><img src="/2022/01/10/Git%20/wps53.jpg" alt="img"> </p>
+<p>2、切换master分支</p>
+<p><img src="/2022/01/10/Git%20/wps54.jpg" alt="img"> </p>
+<p>3、在master上合并第一个分支</p>
+<p><img src="/2022/01/10/Git%20/wps55.jpg" alt="img"> </p>
+<p>4、再查看内容，会出现冲突代码</p>
+<p><img src="/2022/01/10/Git%20/wps56.jpg" alt="img"> </p>
+<p>通常合并分支时，<strong>git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式</strong></p>
+<p><img src="/2022/01/10/Git%20/wps57.jpg" alt="img"> </p>
+<p><img src="/2022/01/10/Git%20/wps58.jpg" alt="img"> </p>
+<h2 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h2><p>1、 在当前的分支未提交时，却要先修改bug，只能先创建一个分支来修复</p>
+<p>2、 这种情况可以先用stash功能“隐藏”当前分支<img src="/2022/01/10/Git%20/wps59.jpg" alt="img"></p>
+<p>3、接着在创建新分支修复bug，最后转化为master，再将两者合并，最后删除新分支</p>
+<p>4、再回到之前需要工作的分支，利用 git stash list恢复</p>
+<p><img src="/2022/01/10/Git%20/wps60.jpg" alt="img"> </p>
+<p>5、 想删除则用 git stash drop</p>
+<p><img src="/2022/01/10/Git%20/wps61.jpg" alt="img"> </p>
+<h2 id="删除提交记录"><a href="#删除提交记录" class="headerlink" title="删除提交记录"></a>删除提交记录</h2><p>1、git reset –hard HEAD~1</p>
+<p>2、git push –force</p>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><p>当从远程库克隆时，实际上git自动把本地的master分支和远程master、分支对应起来，远程库默认库名为origin</p>
+<p>1、 关联远程库   git remote add origin +地址  </p>
+<p>2、查看远程库信息  git  remote  </p>
+<p>3、 查看远程库详细信息  git remote -v</p>
+<p><img src="/2022/01/10/Git%20/wps62.jpg" alt="img"> </p>
+<p>注意：若远程库不为空，则必须通过git pull –rebase orign master获取远程库与本地库合并</p>
+<p><img src="/2022/01/10/Git%20/wps63.jpg" alt="img"> </p>
+<p><img src="/2022/01/10/Git%20/wps64.jpg" alt="img"> </p>
+<h2 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h2><p>git push origin master  （推送到主分支）</p>
+<p>git push origin +分支名  (推送到分支上）</p>
+<h2 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h2><p>多人协作时，大家都会往master分支上推送各自的修改。</p>
+<p>1、把分支dev推送到远程去</p>
+<p><img src="/2022/01/10/Git%20/wps65.jpg" alt="img"> </p>
+<p>2、克隆远程库到本地  git clone + 地址</p>
+<p><img src="/2022/01/10/Git%20/wps66.jpg" alt="img"> </p>
+<p>3、目录生成</p>
+<p><img src="/2022/01/10/Git%20/wps67.jpg" alt="img"> </p>
+<p>现在我们的小伙伴要在dev分支上做开发，就必须把远程的origin的dev分支到本地来，</p>
+<p>4、使用命令创建本地dev分支：git checkout –b dev origin/dev，现在小伙伴们就可以在dev分支上做开发了，开发完成后把dev分支推送到远程库时。</p>
+<p><img src="/2022/01/10/Git%20/wps68.jpg" alt="img"> </p>
+<p>小伙伴们已经向origin/dev分支上推送了提交，而我在我的目录文件下也对同样的文件同个地方作了修改</p>
+<p>5、推送到远程</p>
+<p><img src="/2022/01/10/Git%20/wps69.jpg" alt="img"> </p>
+<p>显示推送失败，因为我的小伙伴最新提交的和我试图推送的有冲突</p>
+<p><strong>解决方案</strong></p>
+<p>1、 先用git pull把最新的提交从origin/dev抓下来</p>
+<p><img src="/2022/01/10/Git%20/image-20210115111944680.png" alt="image-20210115111944680"></p>
+<p>2、 git pull也失败了，则指定本地dev分支与远程origin/dev分支的链接</p>
+<p><img src="/2022/01/10/Git%20/wps71.jpg" alt="img"> </p>
+<p>手动解决在提交</p>
+<p>3、再用  git push origin + 名称 进行推送</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-事件处理模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
